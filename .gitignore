@@ -1,3 +1,6 @@
+vendor
+node_modules
+.idea
 app.zip
 assets.zip
 backup.zip
