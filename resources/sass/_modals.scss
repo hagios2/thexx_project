@@ -1,0 +1,21 @@
+.reveal{
+
+  &.modal{
+    header{
+      h2{
+        color: $red_1;
+      }
+    }
+
+    .footer-options{
+      .btn_green_full_round{
+        padding: .6rem 1.2rem;
+        &:not(:hover){
+          background-color: black;
+          color: $green_1;
+        }
+      }
+    }
+  }
+
+}

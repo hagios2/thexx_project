@@ -1,0 +1,1532 @@
+/*
+	Mixins
+*/
+
+@mixin font-titles {
+  font-family: 'Julius Sans One', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: $black;
+}
+
+@mixin font-titles-alternative {
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: $black;
+}
+
+
+@mixin paragraph-hero {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem; // 22px
+  line-height: 1.563rem;
+  color: $black;
+}
+@mixin font-base {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: $black;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+@mixin paragraph-small {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; // 14px
+  line-height: 1.125rem;
+  color: $black;
+}
+
+/*  TRANSITIONS */
+@mixin transitions {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+@mixin transitions2 {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+/*
+  BUTTONS: User these for top level website bar
+  "Be a model"; "Register for free"; Login/Logout.
+*/
+
+@mixin button-header-selected {
+  @include font-titles-alternative;
+  font-size: 1.063rem;
+  box-sizing: border-box;
+  border-radius: 35px;
+  padding: 8px 27px 9px;
+  background: $green1;
+  border: 2px solid $green1;
+  color: $white;
+  display: inline-block;
+  &:hover {
+    background: $green4;
+    border: 2px solid $green1;
+    color: $black;
+  }
+}
+@mixin button-header-standard {
+  @include font-titles-alternative;
+  font-size: 1.063rem;
+  border: 2px solid $green1;
+  box-sizing: border-box;
+  border-radius: 35px;
+  padding: 8px 27px 9px;
+  background: transparent;
+  border: 2px solid $green1;
+  color: $green1;
+  display: inline-block;
+  &:hover {
+    background: $green4;
+    border: 2px solid $green1;
+    color: $black;
+  }
+}
+@mixin button-header-unselected {
+  @include font-titles-alternative;
+  font-size: 1.063rem;
+  box-sizing: border-box;
+  border-radius: 35px;
+  padding: 8px 27px 9px;
+  background: transparent;
+  border: 2px solid $grey2;
+  color: $grey4;
+  display: inline-block;
+  &:hover {
+    background: $green4;
+    border: 2px solid $green1;
+    color: $black;
+  }
+}
+@mixin button-header-only-txt {
+  @include font-titles-alternative;
+  font-size: 1.063rem;
+  box-sizing: border-box;
+  border-radius: 35px;
+  padding: 8px 0;
+  background: transparent;
+  border: 2px solid transparent;
+  color: $grey3;
+  display: inline-block;
+  &:hover {
+    color: $green1;
+  }
+}
+
+/*
+  Buttons in use at website main Header swiper pills with XXX CLUB TAGS
+*/
+@mixin button-club-pill {
+  @include font-titles-alternative;
+  background: transparent;
+  color: $grey3;
+  border: 1px solid $green1;
+  font-size: 1.063rem;
+  line-height: 1rem;
+  padding: 4px 16px;
+  border-radius: 15px;
+  min-width: 82px;
+  cursor: pointer;
+  &:hover {
+    background: $green1;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+@mixin more-cams {
+  @include font-titles-alternative;
+  font-size: 1.25rem;
+  background: $grey4;
+  color: $grey2;
+  border-radius: 5px;
+  padding: 3px;
+  &:hover {
+    background: $green1;
+    color: $white;
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+/*
+  Section TITLES
+*/
+@mixin title-txt-smallsub {
+  h1 {
+    display: flex;
+    align-items: center;
+    @include font-titles;
+    font-size: 1.563rem;
+    color: $red3;
+    margin: 0;
+    @include mediumScreen {
+      font-size: 1.875rem;
+      margin: initial;
+    }
+    span {
+      &.small-subtitle {
+        @include font-titles-alternative;
+        font-size: 1rem;
+        color: $grey2;
+        margin-left: 10px;
+        display: none;
+        @include xlargeScreen {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+
+
+/*
+  Filters
+*/
+@mixin filters-options {
+  .filters-options {
+    margin-bottom: 5px;
+    @include mediumScreen {
+      margin-bottom: initial;
+    }
+    ul {
+      li {
+        display: inline-block;
+        &:last-child {
+          button {
+            svg {
+              margin-left: 10px;
+            }
+          }
+        }
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          padding: 6px 3px 4px;
+          border: 1px solid $grey2;
+          border-radius: 5px;
+          background: transparent;
+          @include mediumScreen {
+            padding: 9px 8px 7px;
+          }
+          span {
+            color: $grey2;
+            span {
+              margin-right: 10px;
+            }
+            &#span-filters {
+              display: flex;
+              &.inactive {
+                display: none;
+              }
+            }
+            &#span-close-filters {
+              display: none;
+              &.active {
+                display: flex;
+                span {
+                  color: $red3;
+                }
+                svg {
+                  path {
+                    fill: $red3;
+                  }
+                }
+              }
+            }
+          }
+          svg {
+            width: 13px;
+            height: 13px;
+            path {
+              fill: $grey3;
+            }
+          }
+          &:hover {
+            background: $green1;
+            color: $white;
+            border-color: $green1;
+            span {
+              color: $white;
+            }
+            svg {
+              path {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Cards
+*/
+@mixin card-cams {
+  .card-thumbnail {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    a {
+      img {
+        &.deactivated {
+          filter: grayscale(100%);
+        }
+      }
+    }
+  }
+  .top-card-options {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 100%;
+    padding-right: 6px;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &.videoshop {
+        justify-content: flex-end;
+      }
+      li {
+        a {
+          opacity: 1;
+          &:hover {
+            opacity: .7;
+          }
+          img {
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+  .footer-card-options {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    width: 100%;
+  }
+}
+
+/*
+  Ratings
+*/
+@mixin stars-ratings {
+  .stars-ratings {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+      li {
+        svg {
+          path {
+            fill: $golden1;
+          }
+        }
+        &.inactive {
+          svg {
+            path {
+              fill: $grey4;
+            }
+          }
+        }
+      }
+    }
+    .ratings-analitycs {
+      margin-left: 10px;
+      a {
+        color: $grey3;
+        text-decoration: underline !important;
+        &:hover {
+          color: $golden1;
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin ratings {
+  ul {
+    &.rating-options {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 5px;
+      border-top: 1px solid $grey5;
+      padding-top: 7px;
+      @include largeScreen {
+        margin-top: 2px;
+        border-top: none;
+        padding-top: initial;
+      }
+      li {
+        font-size: 0.75rem;
+        color: $grey2;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: initial;
+        }
+        svg {
+          .wrapper-percentage {
+            color: $grey2;
+            .percentage-sign {
+
+            }
+          }
+        }
+        @include stars-ratings;
+      }
+    }
+  }
+}
+
+
+/*
+  MIXIN for responsiviness of the Main website Grid for content section main wrappers
+*/
+
+/* RWD for HOMEPAGE <MAIN> */
+@mixin grid-custom-theclub-homepage-main {
+  width: 100%;
+  @include xlargeScreen {
+    width: 85%;
+    margin-right: 2%;
+  }
+  @include xxxl {
+    width: 93%;
+  }
+}
+/* RWD for HOMEPAGE <ASIDE> */
+@mixin grid-custom-theclub-homepage-aside {
+  @include xlargeScreen {
+    width: 13%;
+  }
+  @include xxxl {
+    width: 7%;
+  }
+}
+
+/* RWD for INNER PAGES <MAIN> */
+@mixin grid-custom-theclub-inner-pages-main {
+  width: 100%;
+  @include mediumScreen {
+    width: 68%;
+    margin-right: 2%;
+  }
+  @include largeScreen {
+    width: 85%;
+    margin-right: 1%;
+  }
+  @include xlargeScreen {
+    width: 74%;
+    margin-right: 1%;
+  }
+}
+
+/* RWD for INNER PAGES <ASIDE> */
+@mixin grid-custom-theclub-inner-pages-aside {
+  width: 100%;
+  @include mediumScreen {
+    width: 30%;
+  }
+  @include largeScreen {
+    width: 35%;
+  }
+  @include xlargeScreen {
+    width: 25%;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+  Effects
+*/
+@mixin shaker {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(0,-1px, 0);
+    }
+
+    20%, 80% {
+      transform: translate3d(0, 2px, 0);
+    }
+
+    30%, 50%, 70% {
+      transform: translate3d(0, -4px, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(0, 4px, 0);
+    }
+  }
+}
+
+/*
+  The Club Chat
+*/
+@mixin theclub-chat {
+  #wrapper-chat {
+    @include grid-custom-theclub-inner-pages-aside;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background: $white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    @include mediumScreen {
+      margin-top: initial;
+    }
+    > div {
+      flex: 1;
+    }
+    #chat-tabs {
+      border: 0;
+      width: 100%;
+      .tabs {
+        .tabs-title {
+          a {
+            padding: 7px 10px 6px;
+            color: $grey3;
+            &:hover {
+              color: $green1;
+              font-weight: 800;
+            }
+          }
+          a[aria-selected='true'] {
+            background: $white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border: 1px solid $grey4;
+            border-bottom: 1px solid $white;
+            color: $green1;
+            font-weight: 800;
+          }
+          &.is-active {
+
+          }
+        }
+      }
+      .tabs-content {
+        height: 96%;
+        border: 1px solid $grey5;
+        margin-top: -1px;
+        @include mediumScreen {
+          height: initial;
+        }
+        @include largeScreen {
+          height: 96%;
+        }
+        .tabs-panel {
+          padding: 10px 5px;
+          height: 99%;
+          @include mediumScreen {
+            height: initial;
+          }
+          @include largeScreen {
+            height: 99%;
+          }
+          form {
+            position: relative;
+            height: 100%;
+            @include mediumScreen {
+              position: static;
+              height: initial;
+            }
+            @include largeScreen {
+              position: relative;
+              height: 100%;
+            }
+            .chat-list {
+              height: 90%;
+              overflow-y: auto;
+              @include mediumScreen {
+                height: 215px;
+                overflow-y: scroll;
+              }
+              @include largeScreen {
+                height: 90%;
+                overflow-y: auto;
+              }
+              li {
+                &.model-chat-line, &.user-chat-line {
+                  margin-bottom: 10px;
+                  @include flex-center;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+                  .user-thumb {
+                    margin-right: 10px;
+                    img {
+                      max-width: 35px;
+                      height: auto;
+                      border-radius: 50px;
+                    }
+                  }
+                  .chat-balloon {
+                    margin-top: 7px;
+                    padding: 8px 10px;
+                    background: $linearSet1;
+                    border-radius: 22px;
+                    border-top-left-radius: 0;
+                    box-shadow: 0px 0px 0.944444px rgba(0, 0, 0, 0.24), 0px 1.88889px 3.77778px rgba(0, 0, 0, 0.16), 0px -0.944444px 0.944444px rgba(0, 0, 0, 0.08);
+                    p {
+                      margin-bottom: 0;
+                      color: $white;
+                    }
+                  }
+                }
+                &.user-chat-line {
+                  align-items: flex-end;
+                  justify-content: flex-end;
+                  .user-thumb {
+                    margin-left: 10px;
+                    margin-right: 0;
+                  }
+                  .chat-balloon {
+                    background: $grey5;
+                    p {
+                      color: $grey1;
+                    }
+                  }
+                }
+              }
+            }
+            .input-section {
+              @include flex-center;
+              width: 100%;
+              bottom: 0;
+              margin: 20px 0 10px;
+              @include mediumScreen {
+                margin: 0;
+                flex-direction: column;
+              }
+              @include largeScreen {
+                position: absolute;
+                margin: initial;
+                flex-direction: row;
+              }
+              input[type="text"] {
+                margin: 0;
+                max-width: 80%;
+                margin-right: 10px;
+                padding: 0;
+                border: none;
+                border-bottom: 2px solid $grey4;
+                box-shadow: none;
+                @include mediumScreen {
+                  max-width: 100%;
+                  width: 100%;
+                  margin-right: 0;
+                  margin-bottom: 10px;
+                }
+                @include largeScreen {
+                  max-width: initial;
+                  margin-right: initial;
+                  margin-bottom: initial;
+                }
+                @include font-base;
+                &::placeholder {
+                  @include font-base;
+                }
+              }
+              button {
+                @include button-header-standard;
+                @include mediumScreen {
+                  padding: 4px 20px 6px;
+                }
+                @include largeScreen {
+                  padding: 8px 27px 9px;
+                }
+              }
+            }
+          }
+          p {
+            @include paragraph-small;
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            font-size: 0.813rem;
+            line-height: 1.125rem;
+          }
+          &.is-active {
+
+          }
+          /*  Model users/Followers */
+          ul#model-followers-list {
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              margin-bottom: 8px;
+              > div {
+                margin-right: 10px;
+                &:last-child {
+                  margin-right: initial;
+                }
+                > img {
+                  height: 25px;
+                }
+              }
+              .gender-icon {
+                margin-right: 5px;
+                min-width: 40px;
+              }
+              .user-thumb {
+                img {
+                  border-radius: 50px;
+                }
+              }
+              .username-tag {
+                h2 {
+                  font-size: 1rem;
+                  line-height: 1rem;
+                  margin: 0;
+                  a {
+                    @include font-titles-alternative;
+                    color: $green1;
+                    &:hover {
+                      text-decoration: underline !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #cta-tips {
+      background: $alert3;
+      padding: 10px;
+      width: 100%;
+      @include flex-center;
+      &:hover {
+        ul {
+          li {
+            background: $white;
+            a {
+              img {
+                @include shaker;
+              }
+            }
+          }
+        }
+      }
+      header {
+        h1 {
+          @include font-titles-alternative;
+          font-size: 1.25rem;
+          line-height: 1rem;
+          color: $green1;
+          margin-bottom: 5px;
+        }
+        h2 {
+          @include font-titles-alternative;
+          font-size: 0.625rem;
+          line-height: 1rem;
+          color: $brandredMain;
+          margin-bottom: 0;
+        }
+      }
+      ul {
+        li {
+          a {
+            img {
+              width: 53px;
+              height: 40px;
+              padding: 2px;
+              box-shadow: 0 0 5px $grey4;
+              border: 2px solid $green4;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin footer-options {
+  #footer-options {
+    margin-top: 30px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      li {
+        a {
+          span {
+            @include button-header-standard;
+            &.previous {
+              @include button-header-unselected;
+            }
+            &.reset-password {
+              @include button-header-only-txt;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin modals-and-confirmation-pages {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background: $black;
+  background: rgba(0,0,0,.9);
+  border: 20px groove $green1;
+  border-color: rgba(18,235,144,.7);
+  @include mediumScreen {
+    padding: 20px 50px;
+  }
+  &.gamification-panels {
+    background: rgb(17,109,66);
+    background: linear-gradient(0deg, rgba(17,109,66,1) 23%, rgba(43,62,54,1) 100%);
+  }
+  header {
+    margin-bottom: 20px;
+    h1 {
+      @include font-base;
+      font-size: 1.875rem;
+      line-height: 1.875rem;
+      color: $golden1;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+    h2 {
+      @include font-base;
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      color: $green4;
+    }
+  }
+  #wrapper-register-account {
+    margin-top: 20px;
+    h2 {
+      @include font-titles-alternative;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      color: $grey4;
+    }
+    a {
+      @include font-titles-alternative;
+      color: $green4;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+  }
+}
+@mixin shaker-attention {
+    @keyframes shake-animation {
+      0% { transform:translate(0,0) }
+      1.78571% { transform:translate(5px,0) }
+      3.57143% { transform:translate(0,0) }
+      5.35714% { transform:translate(5px,0) }
+      7.14286% { transform:translate(0,0) }
+      8.92857% { transform:translate(5px,0) }
+      10.71429% { transform:translate(0,0) }
+      100% { transform:translate(0,0) }
+    }
+    .highlight {
+      animation: shake-animation 3.72s ease infinite;
+      transform-origin: 50% 50%;
+      display: inline-block;
+      .shaker {
+        display: inline-block;
+        margin: 0 auto;
+        background: yellow;
+        padding: 5px 10px;
+        border: 4px groove red;
+        color: red;
+      }
+    }
+}
+
+@mixin terms-conditions {
+  #wrapper-terms-conditions {
+    margin-top: 30px;
+    @include flex-center;
+    justify-content: center;
+    input[type='checkbox'] {
+      margin-right: 5px;
+    }
+    .checkbox-radio-switch-label {
+      position: absolute;
+      text-indent: -9999px;
+    }
+    svg {
+      margin-right: 10px;
+      circle {
+        fill: $grey3;
+      }
+      path {
+        fill: $grey3;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      color: $grey4;
+      font-size: .85rem;
+      line-height: .85rem;
+      @include mediumScreen {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+      a {
+        color: $grey4;
+        text-decoration: underline !important;
+        &:hover {
+          color: $green1;
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}
+
+/*
+  DesignTheme Boxes
+  Red Boxes in the footer areas of MAIN website section.
+  There are the information blocks. 3 colums layout.
+*/
+@mixin designtheme-boxes {
+  .designtheme-boxes {
+    padding: 10px;
+    @include mediumScreen {
+      padding: 0 10px 0 0;
+    }
+    .inner-box {
+      background: $brandredMain;
+      background: rgba(143,6,6,.6);
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        h1 {
+          order: 2;
+          color: $red4;
+          font-size: 1.75rem;
+          line-height: 1.75rem;
+        }
+        img {
+          order: 1;
+          max-width: 80px;
+          margin: 30px auto;
+        }
+      }
+      .content-stage {
+        margin: 20px auto 0;
+        max-width: 245px;
+        p {
+          color: $grey4;
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+  THE CLUB Banners
+*/
+@mixin designtheme-bannerbox-pitch {
+  .bannerbox-pitch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    @include transitions;
+    @include mediumScreen {
+      width: 45%;
+      margin: 0 2.5%;
+      padding: 20px 40px;
+    }
+    &.background-one {
+      @include transitions;
+      background: url('../images/layout/background-ass.jpg') no-repeat center;
+      background-size: cover;
+      &:hover {
+        @include transitions;
+        background-image: linear-gradient(black, black),
+          url('../images/layout/background-ass.jpg');
+        background-size: cover;
+        background-blend-mode: saturation;
+        box-shadow: 0 0 10px $green1;
+      }
+    }
+    &.background-two {
+      background: url('../images/layout/background-girl.jpg') no-repeat center;
+      background-size: cover;
+      &:hover {
+        @include transitions;
+        background-image: linear-gradient(black, black),
+        url('../images/layout/background-girl.jpg');
+        background-size: cover;
+        background-blend-mode: saturation;
+        box-shadow: 0 0 10px $green1;
+      }
+    }
+    header {
+      h1, h2 {
+        @include font-titles-alternative;
+        font-size: 1.563rem;
+        line-height: 1.563rem;
+      }
+      h1 {
+        color: $white;
+      }
+      h2 {
+        color: $alert3;
+      }
+    }
+    .cta {
+      margin-top: 40px;
+      a {
+        @include button-header-selected;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+@mixin designtheme-bannerbox-tokens {
+  .bannerbox-tokens {
+    @include transitions;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    &:hover {
+      @include transitions;
+      box-shadow: 0 -5px 10px $grey1;
+    }
+    &.my-tokens {
+      background: #FF8079;
+      background: linear-gradient(180deg, #FF8079 0%, rgba(255, 128, 121, 0) 100%);
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      @include mediumScreen {
+        width: 45%;
+        margin: 0 1.5%;
+      }
+      header {
+        svg {
+          path {
+            fill: $golden1;
+          }
+        }
+        h1 {
+          @include font-titles-alternative;
+          color: $white;
+          font-size: 1.875rem;
+          line-height: 1.875rem;
+        }
+        h2 {
+          @include font-titles;
+          color: $white;
+          font-size: 1.875rem;
+          line-height: 1.875rem;
+        }
+      }
+      .cta {
+        margin-top: 10px;
+        a {
+          @include button-header-selected;
+        }
+      }
+    }
+    &.default {
+
+    }
+  }
+}
+
+@mixin designtheme-bannerbox-info {
+  .bannerbox-info {
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    @include mediumScreen {
+      padding: 0 10px 0 0;
+      margin-bottom: initial;
+    }
+    .inner-box {
+      background: $brandredMain;
+      background: rgba(143,6,6,.6);
+      border-radius: 5px;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        svg {
+          margin: 0 auto 20px;
+          width: 50px;
+          height: auto;
+          path {
+            fill: white;
+          }
+          &.wallet-icon-fix {
+            path {
+              fill: none;
+            }
+          }
+        }
+        h1, h2, h3 {
+          @include font-titles-alternative;
+        }
+        h1 {
+          color: $grey4;
+          font-size: 1.25rem;
+          line-height: 1.25rem;
+        }
+        h2 {
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+          color: $green4;
+        }
+        h3 {
+          margin: 0;
+          margin-top: 10px;
+          font-size: 1.25rem;
+          line-height: 1.25rem;
+          color: $grey4;
+        }
+      }
+      .withdraw-options {
+        @include theclub-forms;
+        form {
+
+        }
+      }
+      .cta {
+        margin-top: 15px;
+        a {
+          @include button-header-standard;
+          color: $white;
+          border-color: $white;
+          text-transform: uppercase;
+        }
+        &.highlighted {
+          a {
+            @include button-header-selected;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Bar for Stream pages Live and Videoshop
+  Also using it at comments panels/sections
+*/
+@mixin bar-stream-pages {
+  #inner-table-header {
+    @include mediumScreen {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+    @include largeScreen {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &.video-stream {
+      header {
+        h1 {
+          @include font-titles;
+          font-size: 1.875rem;
+          line-height: 2.063rem;
+          color: $black;
+          margin-bottom: 0;
+        }
+      }
+    }
+    header {
+      h1 {
+        @include font-titles-alternative;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        color: $black;
+        margin: 0;
+        margin-bottom: 8px;
+        padding: 0;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        lh, li {
+          @include font-base;
+          color: $red2;
+          margin-right: 5px;
+          font-size: .75rem;
+          line-height: .75rem;
+        }
+
+        li {
+          &:after {
+            content: ",";
+            margin-left: -2px;
+          }
+
+          &:last-child {
+            margin-right: initial;
+
+            &:after {
+              content: initial;
+            }
+          }
+
+          a {
+            @include font-base;
+            color: $red2;
+            text-decoration: underline !important;
+            font-size: .75rem;
+            line-height: .75rem;
+            &:hover {
+              color: $green1;
+              text-decoration: underline !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Table head model profile
+  This is the styling of the inner section of the Videostream Model profile page TITLE
+*/
+@mixin table-head-model-profile {
+  #table-header {
+    @include grid-custom-theclub-inner-pages-main;
+    background: $white;
+    border-radius: 5px;
+    padding: 7px 10px 5px;
+    margin-bottom: 10px;
+    @include mediumScreen {
+      margin-bottom: initial;
+    }
+    @include bar-stream-pages;
+    &.video-stream {
+      width: 100%;
+      margin-right: 0;
+    }
+    #model-fast-info-section {
+      @include ratings;
+      width: 100%;
+      margin-top: 3px;
+      @include largeScreen {
+        width: initial;
+        margin-top: initial;
+      }
+    }
+  }
+}
+
+/*
+  Photo gallery
+*/
+@mixin model-gallery {
+  /*  Photo gallery using fancybox library */
+  #model-gallery {
+    ul {
+      li {
+        padding: 1px;
+        margin-bottom: 10px;
+        @include mediumScreen {
+          margin-bottom: 20px;
+        }
+        @include largeScreen {
+          margin-bottom: 0px;
+        }
+        @include xxl {
+          margin-bottom: 40px;
+        }
+        a {
+          img {
+            width: auto;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            &:hover {
+              img {
+                border-color: $green4;
+                cursor: zoom-in;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Comment list entries
+*/
+@mixin comment-list-entries {
+  .comments-list {
+    ul {
+      li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        .comment-balloon {
+          border: 1px solid $grey4;
+          border-radius: 15px;
+          border-top-right-radius: 0;
+          padding: 10px;
+          width: 80%;
+          @include mediumScreen {
+            padding: 20px;
+            width: 90%;
+          }
+          &:hover {
+            border-color: $green1;
+          }
+          p {
+            @include font-base;
+            color: $grey3;
+          }
+        }
+        .user-thumbnail-ratings {
+          text-align: center;
+          width: 10%;
+          margin-left: 6%;
+          @include mediumScreen {
+            width: 9%;
+            margin-left: 1%;
+          }
+          img {
+            max-width: 35px;
+            height: auto;
+            border-radius: 50px;
+            margin-bottom: 10px;
+          }
+          @include stars-ratings;
+          .stars-ratings {
+            margin-right: 0;
+            display: flex;
+            justify-content: center;
+            ul {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    #add-new-comment {
+      margin-top: 60px;
+      border: 1px solid $grey6;
+      border-radius: 5px;
+      padding: 10px;
+      header {
+        margin-bottom: 10px;
+        h1 {
+          @include font-titles-alternative;
+          color: $black;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          border: none;
+          svg {
+            width: 30px;
+            height: 30px;
+            path {
+              fill: $grey4;
+            }
+          }
+        }
+      }
+      .comments-widget {
+        p {
+        }
+      }
+    }
+  }
+}
+
+/*
+  Favorites Swiper wrapper
+*/
+@mixin favorites-swiper-list {
+  .favorites-swiper-list {
+    margin: 60px auto 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $grey4;
+    header.section-header {
+      padding: 0;
+      h1 {
+        @include font-titles;
+        font-size: 1.875rem;
+        svg {
+          width: 30px;
+          height: auto;
+          path {
+            fill: $grey1;
+          }
+        }
+      }
+    }
+    .swiper-wrapper-favorites {
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100px;
+      .swiper-wrapper {
+        .card-cams {
+          .wrapper-thumbnail-area {
+            .top-card-options {
+              width: 97%;
+            }
+          }
+        }
+      }
+    }
+    .wrapper-swiper-handles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      .swiper-prev, .swiper-next {
+        opacity: .5;
+        margin: 0 10px;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+          svg {
+
+          }
+        }
+        svg {
+          width: 30px;
+          height: 30px;
+          path {
+            fill: $green1;
+          }
+        }
+      }
+      .swiper-next {
+
+      }
+    }
+  }
+}
+
+/*
+  Toggler Triggers
+  This rules styles the Buttons that activate panels in model pages
+*/
+@mixin toggler-triggers {
+  span {
+    &#span-edit-account,
+    &#span-photo-gallery,
+    &#span-comments,
+    &#span-new-video {
+      display: flex;
+      &.inactive {
+        display: none;
+      }
+    }
+    &#span-close-edit-account,
+    &#span-close-photo-gallery,
+    &#span-close-comments,
+    &#span-close-new-video {
+      display: none;
+      &.active {
+        display: flex;
+        color: $red3;
+        svg {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+          path {
+            fill: $red3;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Range Slider
+*/
+@mixin range-slider {
+  .irs--flat .irs-bar {
+    background-color: $green5;
+  }
+  .irs--flat .irs-handle>i:first-child {
+    width: 5px;
+    background-color: $green1;
+    cursor: move;
+  }
+  /*  Tooltip Balloon indicator */
+  .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+    background-color: $green1;
+    cursor: move;
+  }
+  /*  Tooltip TIP indicator */
+  .irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before {
+    border-top-color: $green1;
+    cursor: move;
+  }
+}

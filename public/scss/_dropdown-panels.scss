@@ -1,0 +1,72 @@
+/*
+  Dropdown Panels
+*/
+.dropdown-pane {
+  z-index: 9998;
+  border: none;
+  box-shadow: 1px 1px 5px $grey3;
+  &.user-account-options {
+    max-width: 160px;
+  }
+  &.panel-sorts {
+    max-width: 200px;
+    input[type='checkbox'],
+    input[type='radio'] {
+      --background: transparent;
+    }
+    ul {
+      li {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        label {
+          @include font-titles-alternative;
+          color: $black;
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+      }
+    }
+  }
+  ul {
+    li {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @include font-titles-alternative;
+        color: $black;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        &:hover {
+          color: $green1;
+          svg {
+            path {
+              fill: $green1;
+            }
+          }
+        }
+        svg {
+          height: 15px;
+          width: auto;
+          path {
+            fill: $black;
+          }
+        }
+        span {
+          &.menu-item {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+[08-Sep-2021 15:38:13 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 257953792 bytes) in /home/thexxx/public_html/app/Http/Controllers/MessageController.php on line 57
+[08-Sep-2021 15:39:08 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 257953792 bytes) in /home/thexxx/public_html/app/Http/Controllers/MessageController.php on line 57

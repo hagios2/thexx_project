@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^chat\.thexxx\.club$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.chat\.thexxx\.club$
+RewriteRule ^\(\.\*\)\ $ "http\:\/\/\%\{HTTP_HOST\}\:5379\/" [R=301,L]
+

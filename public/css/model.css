@@ -1,0 +1,39 @@
+.file .file-custom::after {
+  content: '' !important;
+}
+
+.model-account-page .file {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.model-account-page .file  #document_files {
+  cursor: no-drop;
+}
+
+#add-edit-video .file {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.comments-list ul {
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.delete_temp {
+  display: none;
+}
+
+#stream-stage {
+  overflow: hidden;
+}
+
+#stream-stage .card-thumbnail {
+  height: 500px !important;
+}
+
+.end_show {
+  background: maroon !important;
+  border-color: maroon !important;
+}

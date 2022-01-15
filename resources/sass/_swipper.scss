@@ -1,0 +1,66 @@
+#main-area {
+  .swiper-theclub-categories.swiper-container-initialized {
+    &.swiper-container-initialized {
+      .swiper-wrapper {
+        align-items: stretch;
+        padding-bottom: 20px;
+        .swiper-slide {
+          height: auto;
+          &:after {
+            content: "";
+            display: block;
+            padding-bottom: 150%;
+          }
+          .videoshop-category {
+
+            //display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            img.background-image {
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#wrapper-additional-page-data {
+  #wrapper-banners-bar {
+    .swiper-container-horizontal {
+      .swiper-wrapper {
+        .swiper-slide {
+          &.token_package {
+            background: #FF8079;
+            background: linear-gradient(180deg, #FF8079 0%, rgba(255, 128, 121, 0) 100%);
+            border-radius: 15px;
+            height: auto;
+            //display: flex;
+            //align-items: center;
+            //justify-content: center;
+            a{
+              display: block;
+              height: 100%;
+
+              img.flame{
+                width: 40px;
+                margin-bottom: .5rem;
+              }
+
+              h5{
+                color: white;
+                margin-bottom: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

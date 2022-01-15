@@ -1,0 +1,37 @@
+#main-area {
+
+  &.inner-page-design {
+    #design-theme {
+      #landing-section {
+        #table-content-right {
+          #wrapper-wallet-charge {
+            .wrapper-banners {
+              justify-content: center !important;
+
+              .bannerbox-tokens.my-tokens {
+                width: 90% !important;
+                margin: .6rem;
+
+                header{
+                  h1{
+                    line-height: 1 !important;
+                  }
+                }
+
+                @include mediumScreen{
+                  width: 45% !important;
+                }
+
+                @include xlargeScreen {
+                  width: 23% !important;
+                  min-height: 340px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

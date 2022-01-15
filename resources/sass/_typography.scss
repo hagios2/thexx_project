@@ -1,0 +1,24 @@
+h2{
+  line-height: 1.25 !important;
+}
+
+.text-content {
+  ul, ol {
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;;
+    li {
+      line-height: 1.5;
+    }
+  }
+}
+
+main {
+  main#main-area {
+    #only-content-main-section {
+      #wrapper-inner-content.text-content {
+        @extend .text-content
+      }
+    }
+  }
+}
+

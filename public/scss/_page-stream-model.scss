@@ -1,0 +1,533 @@
+/*
+  Page Stream Model
+*/
+#page-stream-model {
+  width: 100%;
+  padding: 0 5px;
+  @include mediumScreen {
+    padding: initial;
+  }
+  .inner-section {
+    #wrapper-header {
+      margin-bottom: 10px;
+      @include mediumScreen {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      @include table-head-model-profile;
+      .trigger-options {
+        text-align: center;
+        margin: 20px 0;
+        @include mediumScreen {
+          width: 20%;
+          margin: initial;
+        }
+        ul {
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          li {
+            a {
+              @include button-header-selected;
+              @include toggler-triggers;
+              @include shaker;
+              animation: shake 2s infinite ease-in-out;
+              animation-iteration-count: 1;
+              span {
+                &.active {
+                  background: transparent;
+                  border-color: $red3;
+                }
+              }
+            }
+          }
+        }
+      }
+      #view-model-profile {
+        @include grid-custom-theclub-inner-pages-aside;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        @include mediumScreen {
+          margin: initial;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include mediumScreen {
+            flex-direction: column;
+          }
+          @include largeScreen {
+            flex-direction: row;
+          }
+          li {
+            margin-right: 5px;
+            @include mediumScreen {
+              margin-bottom: 3px;
+              margin-right: 0;
+            }
+            @include largeScreen {
+              margin-bottom: initial;
+              margin-right: 5px;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              @include button-header-standard;
+              color: $green1;
+              padding: 10px 27px;
+              background: $white;
+              height: 40px;
+              display: inline-block;
+              span#model-tag-name {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    } /*  //wrapper-header */
+
+    #main-stage {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-bottom: 20px;
+      @include mediumScreen {
+        flex-direction: row;
+      }
+      #wrapper-stream-stage {
+        @include grid-custom-theclub-inner-pages-main;
+        ackground: $white;
+        border-radius: 8px;
+        #stream-stage {
+          position: relative;
+          @include card-cams;
+          /*  The two classes below rewrites the styles from the small cam cards and are reused for stream pages */
+          .top-card-options {
+            padding: 5px 10px;
+            ul {
+              li {
+                &:last-child {
+                  img {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+
+                img {
+                  height: 20px;
+                }
+              }
+            }
+          }
+          .preview-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            a {
+              opacity: 1;
+              img {
+                max-width: 140px;
+                @include mediumScreen {
+                  max-width: initial;
+                }
+              }
+              &:hover {
+                opacity: .5;
+              }
+            }
+          }
+          .footer-stream-card-options {
+            position: absolute;
+            width: 100%;
+            padding: 5px;
+            bottom: 2px;
+            right: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include mediumScreen {
+              padding: 5px 10px;
+            }
+            &.videoshop {
+              justify-content: flex-end;
+            }
+            ul {
+              li {
+                img {
+                  height: 20px;
+                }
+              }
+
+              &#stream-options {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                li {
+                  margin-left: 3px;
+
+                  a {
+                    @include transitions;
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $grey4;
+                    background: rgba(196, 196, 196, .7);
+
+                    &:hover {
+                      @include transitions;
+                      background: $green1;
+                      border-radius: 50px;
+
+                      svg {
+                        path {
+                          fill: $white;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        #stream-section-footer-options {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: column;
+          background: $white;
+          padding: 10px 3px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          @include largeScreen {
+            flex-direction: row;
+            padding: 10px;
+          }
+          &.video-stream {
+            display: flex;
+            justify-content: flex-end;
+          }
+          #wrapper-gifts-section {
+            order: 1;
+            margin-bottom: 15px;
+            width: 100%;
+            padding-left: 8px;
+            @include largeScreen {
+              margin-bottom: initial;
+              width: initial;
+              padding-left: initial;
+            }
+            ul {
+              @include flex-center;
+              justify-content: center;
+              @include xlargeScreen {
+                justify-content: space-between;
+              }
+              &:hover {
+                li {
+                  border-color: transparent;
+                }
+              }
+
+              lh {
+                @include flex-center;
+
+                img {
+                  width: 35px;
+                  height: 35px;
+                  padding: 2px;
+                  box-shadow: 0 0 5px $grey4;
+                  border: 2px solid $green4;
+                  border-radius: 6px;
+                  margin-right: 10px;
+                }
+
+                h2 {
+                  @include font-titles-alternative;
+                  font-size: 1.125rem;
+                  line-height: 1.125rem;
+                  color: $linearSet1;
+                  max-width: 44px;
+                  @include mediumScreen {
+                    font-size: 1.313rem;
+                    line-height: 1.125rem;
+                    max-width: 50px;
+                  }
+                }
+              }
+
+              li {
+                @include transitions;
+                padding: 5px 10px;
+                border-left: 1px solid $grey5;
+                box-shadow: 0 0 0 transparent;
+                @include xlargeScreen {
+                  padding: 5px 7px;
+                }
+                &:hover {
+                  @include transitions;
+                  border-color: $green4;
+                  box-shadow: 0 0 5px $green1;
+                  border-radius: 50px;
+
+                  img {
+                    @include shaker;
+                  }
+                }
+
+                &:last-child {
+                  border-color: transparent;
+
+                  &:hover {
+                    opacity: 1;
+                    box-shadow: 0 0 0 transparent;
+                  }
+                }
+
+                a {
+                  img {
+                    width: 35px;
+                    height: 35px;
+                  }
+
+                  &.trigger-more-gifts {
+                    svg {
+                      width: 20px;
+                      height: 20px;
+
+                      path {
+                        fill: $grey4;
+                      }
+
+                      &:hover {
+                        path {
+                          fill: $green1;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* Mkt section where user is invited to click to access premium access */
+          #mkt-trigger-for-new-members {
+            @include flex-center;
+            justify-content: center;
+            margin: 15px 0 0;
+            border-top: 1px solid $grey5;
+            width: 100%;
+            padding-top: 15px;
+            order: 3;
+            @include mediumScreen {
+              margin: initial;
+              padding-top: initial;
+              width: initial;
+              order: 2;
+              justify-content: space-between;
+              border: none;
+              margin-bottom: 15px;
+            }
+            @include largeScreen {
+              margin-bottom: initial;
+            }
+            h2 {
+              @include font-titles-alternative;
+              font-size: 1.063rem;
+              line-height: 1rem;
+              color: $black;
+              margin: 0;
+              margin-right: 10px;
+            }
+
+            p {
+              @include font-titles-alternative;
+              margin: 0;
+
+              a {
+                color: $purple1;
+                font-size: 1.25rem;
+                line-height: 1rem;
+                border: 1px solid;
+                padding: 20px 10px;
+                border-radius: 15px;
+                display: inline-block;
+                @include mediumScreen {
+                  border: none;
+                  padding: initial;
+                  border-radius: 0;
+                  display: initial;
+                }
+                &:hover {
+                  text-decoration: underline !important;
+                  color: $green1;
+                }
+              }
+            }
+          }
+
+          /**/
+          #user-actions-with-model {
+            @include flex-center;
+            order: 2;
+            @include mediumScreen {
+              order: 3;
+            }
+            li {
+              margin: 0 5px;
+
+              button {
+                @include button-header-standard;
+                padding: 8px 17px 9px;
+                @include mediumScreen {
+                  padding: 8px 27px 9px;
+                }
+                &.active {
+                  @include button-header-selected;
+                  padding: 8px 17px 9px;
+                  @include mediumScreen {
+                    padding: 8px 27px 9px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #wrapper-video-description {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        @include mediumScreen {
+          width: 30%;
+        }
+        @include largeScreen {
+          width: 25%;
+        }
+        #video-description {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid $grey6;
+          border-radius: 5px;
+          header {
+            margin-bottom: 15px;
+            h1 {
+              @include font-titles-alternative;
+              font-size: 1.25rem;
+              line-height: 1.25rem;
+              color: $brandredMain;
+            }
+          }
+          #wrapper-description {
+
+          }
+        }
+        #wrapper-info-box {
+          margin-top: 20px;
+          padding: 5px 10px 2px;
+          background: $white;
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          @include mediumScreen {
+            margin-top: 10px;
+          }
+          @include largeScreen {
+            margin-top: 40px;
+          }
+          #left-column {
+            ul {
+              li {
+                display: flex;
+                justify-content: flex-start;
+                align-content: flex-start;
+                margin-bottom: 8px;
+                .title {
+                  @include font-titles-alternative;
+                  font-size: 1.25rem;
+                  line-height: 1.25rem;
+                  min-width: 75px;
+                  @include mediumScreen {
+                    font-size: 1rem;
+                    line-height: 1.25rem;
+                  }
+                  @include largeScreen {
+                    font-size: 1.25rem;
+                    line-height: 1.25rem;
+                  }
+                }
+                .data {
+                  @include font-titles-alternative;
+                  color: $green1;
+                  font-size: 1rem;
+                  line-height:  1.25rem;
+                }
+              }
+            }
+          }
+          #right-column {
+            #cost-tokens {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              @include font-titles-alternative;
+              color: $green1;
+              flex-direction: row;
+              font-size: 1.563rem;
+              @include mediumScreen {
+                font-size: 1rem;
+                flex-direction: column;
+              }
+              @include largeScreen {
+                font-size: 1.563rem;
+                flex-direction: row;
+              }
+              span {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+      #cta-download {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+        @include largeScreen {
+          margin-top: 40px;
+        }
+        a {
+          @include button-header-selected;
+          padding: 8px 27px 16px;
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+          @include mediumScreen {
+            font-size: 1.813rem;
+            line-height: 1.813rem;
+          }
+          @include largeScreen {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+          }
+        }
+      }
+      @include theclub-chat;
+    }
+  }
+}

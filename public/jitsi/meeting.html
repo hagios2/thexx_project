@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            .container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border: 2px black solid;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://meet.jit.si/external_api.js"></script>
+        <script src="myapp.js"></script>
+
+        <script>
+            $(function () {
+                const urlParams = new URLSearchParams(window.location.search);
+
+                var meeting_id = urlParams.get("mid");
+                var user_type = urlParams.get("type");
+
+                if (!user_type) {
+                    user_type = "";
+                }
+
+                if (!meeting_id) {
+                    alert("meeting id is missing");
+                    return;
+                }
+
+                $("#joinMsg").text("Joining...");
+
+                StartMeeting(meeting_id, user_type);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="joinMsg"></div>
+        <div id="container" class="container" style="display: none">
+            <div id="jitsi-meet-conf-container"></div>
+        </div>
+    </body>
+</html>

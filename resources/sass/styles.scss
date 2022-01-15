@@ -1,0 +1,23 @@
+@import "variables";
+@import "rwd-queries";
+@import "buttons";
+@import "typography";
+@import "paddings_margins";
+@import "tokens";
+@import "chat";
+@import "video";
+@import "account";
+@import "swipper";
+@import "modals";
+
+.theme-content-pages{
+  a {
+    color: $red_2;
+    transition: all 0.5s 0s ease;
+    &:active, &:focus, &:hover {
+      color: $red_1;
+    }
+  }
+}
+
+

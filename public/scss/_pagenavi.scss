@@ -1,0 +1,55 @@
+/*
+  Page Navigation
+*/
+#page-navigation {
+  margin: 15px 0 20px 10px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      a {
+        background: $grey4;
+        border: 1px solid $grey4;
+        padding: 10px 14px 8px;
+        border-radius: 4px;
+        &.active {
+          background: $white;
+          border-color: $green1;
+          color: $green1;
+        }
+        &.inactive {
+          opacity: .4;
+          pointer-events: none;
+          cursor: default;
+        }
+        &:hover {
+          border: 1px solid $green1;
+          color: $green1;
+          background: $grey5;
+        }
+      }
+      &#previous, &#next {
+        a {
+          svg {
+            width: 10px;
+            height: 10px;
+            path {
+              fill: $grey3;
+            }
+          }
+          &:hover {
+            svg {
+              path {
+                fill: $green1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

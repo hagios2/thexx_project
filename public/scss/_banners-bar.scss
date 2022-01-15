@@ -1,0 +1,31 @@
+/*
+  Styles all banners bars
+*/
+#wrapper-banners-bar {
+  margin: 30px auto 30px 10px;
+  @include mediumScreen {
+    margin: 60px auto;
+  }
+  &.small-banner-size {
+    .swiper-banner-small-size {
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100px;
+      .swiper-wrapper {
+        .banner-small {
+          opacity: 1;
+          &:hover {
+            opacity: .8;
+          }
+          .inner-banner-small {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}

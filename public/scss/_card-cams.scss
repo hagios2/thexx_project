@@ -1,0 +1,108 @@
+/*
+  THE CLUB CARDS for webcams
+*/
+.card-cams {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 5px;
+  &:hover {
+    border: 1px solid $green1;
+    .model-metadata {
+      header {
+        h1 {
+          a {
+            color: $green1;
+          }
+        }
+      }
+      &.videoshop {
+        background: $green1;
+        header {
+          h1 {
+
+          }
+          h2 {
+            color: $alert1;
+          }
+        }
+      }
+    }
+  }
+  .wrapper-thumbnail-area {
+    position: relative;
+    @include card-cams;
+    &:hover {
+      img {
+        @include transitions;
+        filter: saturate(0);
+      }
+    }
+    .thumbnail-inner-stage {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      overflow: hidden;
+      img {
+
+      }
+    }
+  }
+  .model-metadata {
+    background: $grey6;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    padding: 5px 7px 1px;
+    &.videoshop {
+      background: $brandredMain;
+      header {
+        margin-bottom: 4px;
+        display: inline-block !important;
+        h1 {
+          @include font-titles-alternative;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: none;
+          font-size: 1rem;
+          line-height: 1rem;
+          a {
+            color: $white;
+          }
+        }
+        h2 {
+          @include font-titles-alternative;
+          color: $grey4;
+          font-size: 0.813rem;
+          line-height: 0.813rem;
+          margin: 4px 0 0;
+        }
+      }
+      ul.rating-options {
+        li {
+          svg {
+            path {
+              fill: $alert1;
+            }
+          }
+          .wrapper-static-content {
+            color: $alert1;
+          }
+        }
+      }
+    }
+    header {
+      h1 {
+        @include paragraph-hero;
+        font-size: 0.906rem;
+        line-height: 1rem;
+        margin: 0;
+        a {
+          color: $black;
+          &:hover {
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+    @include ratings;
+  }
+}

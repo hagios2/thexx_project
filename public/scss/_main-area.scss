@@ -1,0 +1,359 @@
+/*
+  Website main section.
+*/
+#main-area {
+  padding: 10px 0;
+  border-top: 77px solid black; /* hacked Styles bar to apply color black behing the main-header opacity background */
+  @include mediumScreen {
+    border-top: 78px solid black; /* hacked Styles bar to apply color black behing the main-header opacity background */
+    padding: 10px;
+  }
+  @include largeScreen {
+    border-top: 45px solid black; /* hacked Styles bar to apply color black behing the main-header opacity background */
+    padding: 10px;
+  }
+  #wrapper-main-aside {
+    @include mediumScreen {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    main {
+      &#wrapper-listings {
+        @include grid-custom-theclub-homepage-main;
+        .inner-section {
+          header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            @include mediumScreen {
+              padding: 0;
+            }
+            .title-division {
+              @include title-txt-smallsub;
+            }
+            @include filters-options;
+          }
+          .posts-listings {
+            .card-cams, .banner-small {
+              padding: 0;
+              margin-bottom: 6px;
+              @include mediumScreen {
+                padding: 5px;
+                margin-bottom: initial;
+              }
+            }
+            .banner-small {
+              border-radius: 5px;
+              background: $grey6;
+              background: rgb(196,196,196);
+              background: linear-gradient(0deg, rgba(196,196,196,1) 12%, rgba(236,236,236,1) 76%);
+              text-align: center;
+              padding: 20px;
+              @include mediumScreen {
+                padding: 5px;
+              }
+              .inner-banner-small {
+                a {
+                  opacity: 1;
+                  &:hover {
+                    opacity: .8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    aside {
+      @include grid-custom-theclub-homepage-aside;
+      &#main-aside {
+        section {
+          margin-bottom: 10px;
+          padding: 8px 10px;
+          header {
+            h1 {
+              @include font-titles-alternative;
+              font-size: 1rem;
+              color: $grey2;
+            }
+          }
+        }
+        #wrapper-tag-cloud {
+          border: 1px solid $grey4;
+          border-radius: 5px;
+          header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            button {
+              @include more-cams;
+              font-size: 0.813rem;
+            }
+          }
+          ul#tag-cloud {
+            line-height: .75rem;
+            li {
+              display: inline-block;
+              margin-bottom: 0;
+              margin-right: 2px;
+              line-height: .75rem;
+              font-size: 0.75rem;
+              a {
+                @include paragraph-small;
+                font-size: 0.75rem;
+                color: $grey2;
+                &:hover {
+                  color: $green1;
+                  text-decoration: underline !important;
+                }
+              }
+            }
+          }
+        }
+        #banner-section {
+          #banner-list {
+            li {
+              margin-bottom: 10px;
+              padding-bottom: 10px;
+              border-bottom: 1px solid $grey4;
+              opacity: 1;
+              &:hover {
+                opacity: .7;
+              }
+              a {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /*
+    The Below rules styles the Copy content pages such as
+    the pages in the _footer.php
+  */
+  &.theme-content-pages {
+    section {
+      &#only-content-main-section {
+        margin: 0 auto;
+        padding: 10px;
+        max-width: 1200px;
+        @include mediumScreen {
+          padding: initial;
+          padding-top: 30px;
+        }
+        header {
+          h1 {
+            @include font-titles;
+            color: $black;
+            font-size: 2.188rem;
+            line-height: 2.188rem;
+            @include largeScreen {
+              font-size: 2.813rem;
+              line-height: 2.813rem;
+            }
+          }
+          h2 {
+            @include font-titles-alternative;
+            font-size: 1.25rem;
+            line-height: 1.85rem;
+            color: $brandredMain;
+          }
+        }
+        #wrapper-inner-content {
+          padding: 50px 0;
+          header {
+            margin-bottom: 30px;
+          }
+          h1 {
+            @include font-titles;
+            color: $black;
+            font-size: 2.188rem;
+            line-height: 2.188rem;
+            @include largeScreen {
+              font-size: 2.813rem;
+              line-height: 2.813rem;
+            }
+          }
+          h2 {
+            @include font-titles-alternative;
+            font-size: 1.85rem;
+            line-height: 1.85rem;
+            color: $brandredMain;
+          }
+          p {
+            font-size: 1rem;
+            line-height:  1.5rem;
+          }
+          ul, ol {
+            margin: 0;
+            margin-bottom: 30px;
+            lh {
+              @include font-titles-alternative;
+              color: $brandredMain;
+              display: inline-block;
+              font-size: 1.25rem;
+              line-height:  1.5rem;
+              color: $black;
+              margin-bottom: 20px;
+            }
+            li {
+              @include font-base;
+              margin-bottom: 15px;
+              margin-left: 20px;
+              list-style: disc;
+            }
+          }
+          ol {
+            li {
+              list-style: decimal;
+            }
+          }
+          table {
+            caption {
+              @include font-titles-alternative;
+              color: $brandredMain;
+              margin-bottom: 15px;
+              font-size: 1.5rem;
+              line-height:  1.5rem;
+              text-align: left;
+              padding: 20px 0 5px;
+            }
+            tr {
+              td {
+                @include font-base;
+                padding: 15px;
+              }
+            }
+          }
+          /*  Disable Account */
+          #disable-account {
+            header {
+              h1, h2 {
+                @include font-titles-alternative;
+                font-size: 1.5rem;
+                line-height: 1.85rem;
+                color: $black;
+                @include mediumScreen {
+                  line-height: 1.5rem;
+                }
+              }
+              h1 {
+                margin-bottom: 20px;
+              }
+              h2 {
+                .delete-highlight {
+                  color: $red3;
+                }
+              }
+            }
+            #disable-form {
+              max-width: 450px;
+              form {
+                @include theclub-forms;
+                label {
+                  position: absolute;
+                  text-indent: -9999px;
+                }
+                input[type="text"] {
+                  @include font-titles-alternative;
+                  color: $red3;
+                  &::placeholder {
+                    color: $red3;
+                  }
+                }
+              }
+              button {
+                @include button-club-pill;
+                padding: 4px 16px 10px;
+                margin-left: 10px;
+                background: $red3;
+                color: $white;
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+                border: none;
+                box-shadow: none;
+                border: 4px solid $red3;
+                &:hover {
+                  background: $alert1;
+                  border-color: $red3;
+                  color: $red3;
+                }
+              }
+            }
+          }
+          /* SUPPORT PAGE content */
+          #wrapper-support {
+            section {
+              &:last-child {
+                margin-top: 30px;
+                @include mediumScreen {
+                  margin-top: initial;
+                }
+              }
+              header {
+                margin-bottom: 10px;
+                @include mediumScreen {
+                  margin-bottom: initial;
+                }
+              }
+            }
+            #search-box {
+              max-width: 450px;
+              form {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                label {
+                  text-indent: -9999px;
+                  position: absolute;
+                }
+                input[type='search'] {
+                  @include font-titles-alternative;
+                  background: $grey2;
+                  border: 1px solid $grey2;
+                  border-top-left-radius: 5px;
+                  border-bottom-left-radius: 5px;
+                  color: $white;
+                  margin-bottom: 0;
+                  height: 40px;
+                  &:hover {
+                    border-color: $green1;
+                  }
+                }
+                button {
+                  background: $grey2;
+                  border-top-right-radius: 5px;
+                  border-bottom-right-radius: 5px;
+                  height: 40px;
+                  width: 40px;
+                  margin-left: 1px;
+                  &:hover {
+                    cursor: pointer;
+                    background: $green1;
+                  }
+                }
+              }
+            }
+            #wrapper-contact-form {
+              @include theclub-forms;
+              button {
+                @include button-club-pill;
+                padding: 5px 16px 10px;
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+                &:hover {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

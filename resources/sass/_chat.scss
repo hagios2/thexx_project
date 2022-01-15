@@ -1,0 +1,35 @@
+#main-area {
+  #wrapper-main-aside {
+    #page-stream-model {
+      #main-stage {
+        #wrapper-chat {
+          #chat-tabs {
+            .tabs-content {
+              .tabs-panel {
+                form {
+                  ul.chat-list {
+                    min-height: 400px;
+                    @include onlyMobile{
+                      max-height: 60vh;
+                    }
+                    @include mediumScreen{
+                      max-height: 60vh;
+                    }
+                    li.user-chat-line, li.model-chat-line {
+                      .chat-balloon {
+                        h5 {
+                          font-size: 1rem;
+                          margin-bottom: .1rem;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

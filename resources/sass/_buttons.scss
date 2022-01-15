@@ -1,0 +1,77 @@
+.btn_round_corners {
+  border-radius: 5px;
+}
+
+.btn_full_round {
+  border-radius: 35px !important;
+}
+
+.btn_filter {
+  @extend .btn_round_corners;
+  border: 2px solid $gray_1;
+  font-family: 'Oswald', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.813rem;
+  padding: 8px 17px 9px;
+}
+
+.btn_green {
+  background-color: $green_1;
+  font-family: Oswald, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  box-sizing: border-box;
+  border: 2px solid $green_1;
+  color: #fff;
+  font-size: 1.063rem;
+  line-height: .813rem;
+  padding: 6px 18px 8px;
+  cursor: pointer;
+
+  &:hover {
+    background: $green_2;
+    border: 2px solid $green_1;
+    color: black;
+  }
+}
+
+.btn_green_full_round {
+  @extend .btn_green;
+  @extend .btn_full_round;
+}
+
+.btn_red_outline {
+  color: $red_1 !important;
+  border-color: $red_1 !important;
+  background-color: white !important;
+
+  &:hover, &:active {
+    background-color: $red_1 !important;
+    border-color: $red_2 !important;
+    color: black !important;
+  }
+}
+
+#panel-filters {
+  .filter-options {
+    ul {
+      li {
+        input.filter {
+          @extend .btn_filter;
+        }
+      }
+    }
+  }
+}
+
+#main-area {
+  #wrapper-manage-wallet {
+    form {
+      input[type=submit] {
+        @extend .btn_green_full_round;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,55 @@
+.token_package {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  word-spacing: 5px;
+  font-size: 20px;
+}
+
+.token_package h5 {
+  color: #05BE70;
+}
+
+#wrapper-banners-bar.small-banner-size .swiper-banner-small-size {
+  overflow-y: hidden;
+  min-height: auto;
+}
+
+.razorpay-payment-button, .download_video_token, .buy_token {
+  padding: 15px;
+  border: none;
+  border-radius: 24px;
+  background: #05BE70;
+  color: white;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.pay_success {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#wrapper-wallet-charge .wrapper-banners {
+  justify-content: end !important;
+  flex-wrap: wrap;
+}
+
+.wrapper-banners .bannerbox-tokens.my-tokens {
+  /*width: 23% !important;*/
+}
+
+.razorpay_logo {
+  width: 150px;
+  margin-left: 10px;
+}
+.wrapper-wallet-listings {
+  overflow-y: auto;
+  height: 420px;
+}
+
+.options.tips.download {
+  margin: 50px auto;
+}

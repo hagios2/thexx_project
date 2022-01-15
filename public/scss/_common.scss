@@ -1,0 +1,179 @@
+/*
+ * Common Styles
+ */
+html {
+  margin-top: 0 !important;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px !important;
+  line-height: 1.5em;
+  color: $black !important;
+  background: $grey5;
+  &#homepage {
+
+  }
+}
+.row {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+[class*="column"]+[class*="column"]:last-child {
+  float: left;
+}
+
+*:focus {
+  outline: 0;
+}
+
+/*  Show only for big screens */
+@media screen and (min-width: 90.063rem) { /* 1441px */
+  .show-for-xxxlScreen {
+    display: none !important; } }
+
+
+h1, h2, h3, h4 {
+  @include font-titles;
+}
+h5, h6 {
+  @include font-titles-alternative;
+}
+
+/*  Font Heading Sizes */
+h1 {
+  font-size: 4.5rem;
+  &.heading-hero {
+    font-size: 3.438rem;
+    font-style: normal;
+    line-height: 3.438rem;
+    font-weight: 500;
+  }
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+h3 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+}
+h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+}
+h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+h6 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+p {
+  @include font-base;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: $white;
+  text-decoration: none !important;
+  &:hover {
+    color: $black;
+    text-decoration: none !important;
+  }
+  &.excerpt-read-more {
+    color: $green1;
+    font-size: 0.688rem;
+    margin-left: 5px;
+    font-weight: bold;
+    &:hover {
+      color: $green1;
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.showmore-button {
+  margin-top: 10px;
+  cursor: pointer;
+  color: $grey3;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 14px;
+  &:hover {
+    color: $green1;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.313rem;
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include font-base;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+::selection {
+  background:$black !important; /* Safari */
+  color: $white !important;
+}
+::-moz-selection {
+  background:$black !important; /* Firefox */
+  color: $white !important;
+}
+.hide {
+  display: none;
+}
+/*  Screen reader Txt */
+.screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+/*  Scroll to top feature */
+.scrollup {
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  text-indent: -9999px;
+  background: url('../images/icons/arrow-up.svg') no-repeat center;
+  cursor: pointer;
+  opacity: 1;
+  &:hover {
+    opacity: .4;
+  }
+}
+
+.reveal-overlay {
+  display: none;
+  background-color: rgba(10,10,10,0.75);
+  z-index: 9998;
+}

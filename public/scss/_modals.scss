@@ -1,0 +1,532 @@
+/*
+  Modals
+*/
+
+/* Main menu */
+#main-nav {
+  @include transitions;
+  z-index: 9999;
+  position: fixed;
+  background: $white;
+  padding: 12px 15px;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  @include largeScreen {
+    width: 382px;
+    right: -382px;
+  }
+  &.active {
+    @include transitions;
+    top: 0;
+    right: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  nav {
+    height: 100vh;
+    overflow-y: scroll;
+    ul {
+      &#social-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        li {
+          a {
+            svg {
+              fill: $grey2 !important;
+              width: 20px;
+              height: 20px;
+            }
+            &:hover {
+              svg {
+                stroke: $green1;
+              }
+            }
+          }
+        }
+      }
+    }
+    #main-menu {
+      ul {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $grey5;
+        &:last-child {
+          border-bottom: none;
+        }
+        li {
+          margin-bottom: 30px;
+          a {
+            font-size: 20px;
+            line-height: 20px;
+            color: $black;
+            padding: 3px 0;
+          }
+          &:hover {
+            a {
+              color: $red2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*  Languages modal  */
+#modal-languages {
+  @include transitions;
+  z-index: 9999;
+  position: fixed;
+  background: $white;
+  padding: 12px 15px;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  min-height: 40px;
+  @include largeScreen {
+    width: 382px;
+    right: -382px;
+  }
+  &.active {
+    @include transitions;
+    top: 0;
+    right: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    li {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+      svg {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+/*  Overlay  */
+#menu-overlay {
+  position: fixed;
+  z-index: 9998;
+  background: $black;
+  background: rgba(0,0,0,.85);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: -9999px;
+  &.active {
+    left: 0;
+  }
+}
+
+/*
+  General Modals
+*/
+.reveal {
+  /*@include modals-and-confirmation-pages;*/
+  @include theclub-forms;
+  @include modals-and-confirmation-pages;
+  .close-button {
+    color: $grey4;
+    &:hover {
+      color: $red3;
+    }
+  }
+  &.mkt {
+    max-width: 900px !important;
+    width: 100% !important;
+  }
+  &.negative-status {
+    border: 20px groove $red3;
+    border-color: $brandredMain;
+    .modal-stage {
+      header {
+        .wrapper-alert {
+          .title-alert {
+            svg {
+              path {
+                fill: $red3;
+              }
+            }
+            h1 {
+              color: $red3;
+            }
+            h2 {
+              color: $grey4;
+            }
+          }
+        }
+      }
+      .wrapper-content {
+        ul {
+          &.confirmation-options {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            li {
+              margin-bottom: 10px;
+              text-align: center;
+              a {
+                @include button-header-standard;
+              }
+              &.btn-disable-account {
+                a {
+                  border-color: $red3;
+                  color: $red3;
+                  display: flex;
+                  justify-content: center;
+                  align-content: center;
+                  line-height: 25px;
+                  &:hover {
+                    background: $red3;
+                    color: $alert1;
+                    svg {
+                      path {
+                        fill: $alert1;
+                      }
+                    }
+                  }
+                  svg {
+                    margin-right: 10px;
+                    path {
+                      fill: $red3;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#modal-login,
+#modal-login-user,
+#modal-reset-password,
+#modal-more-tokens,
+#modal-offer-gift,
+modal-offer-gift-confirmation,
+modal-tips,
+modal-tips-confirmation,
+modal-disable-account,
+#modal-success-reset-password {
+  header {
+    h1 {
+      img {
+        max-width: 150px;
+      }
+    }
+    h2 {
+      @include font-titles-alternative;
+      color: $red3;
+      font-size: 1.063rem;
+      line-height: 1rem;
+    }
+    h3 {
+      @include font-titles;
+      color: $grey4;
+      font-size: 1.063rem;
+      line-height: 1rem;
+    }
+    .info-icon {
+      margin-bottom: 20px;
+    }
+  }
+  .modal-stage {
+    @include footer-options;
+  }
+}
+#modal-more-tokens {
+  header {
+    h2 {
+      color: $green4;
+      font-size: 2rem;
+      line-height: 2rem;
+      margin-bottom: 20px;
+    }
+  }
+  .modal-stage {
+    #footer-options {
+      margin-top: 30px;
+      ul {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+#modal-success-reset-password {
+  header {
+    h2 {
+      font-size: 1.85rem;
+      line-height: 2rem;
+      color: $white;
+    }
+    h3 {
+      @include font-titles;
+      margin-top: 20px;
+      color: $grey4;
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+  .modal-stage {
+    #footer-options {
+      margin-top: 30px;
+      ul {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+#modal-offer-gift, #modal-tips {
+  .modal-stage {
+    @include flex-center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    @include mediumScreen {
+      flex-direction: row;
+    }
+    header {
+      width: 100%;
+      @include largeScreen {
+        width: 30%;
+      }
+      .wrapper-title {
+        @include flex-center;
+        justify-content: flex-start;
+        @include mediumScreen {
+          margin-bottom: 20px;
+        }
+        img {
+          width: 35px;
+          height: 35px;
+          padding: 2px;
+          box-shadow: 0 0 5px $grey4;
+          border: 2px solid $green4;
+          border-radius: 6px;
+          margin-right: 10px;
+        }
+        .title-model {
+          text-align: left;
+          h1 {
+            @include font-titles-alternative;
+            font-size: 1.313rem;
+            line-height: 1.5rem;
+            color: $linearSet1;
+            text-decoration: none;
+            margin-bottom: 0;
+            span.data-injection {
+              display: block;
+              color: $green1;
+            }
+          }
+        }
+      }
+      .model-thumbnail {
+        text-align: left;
+        img {
+          max-width: 150px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .options {
+      width: 100%;
+      @include largeScreen {
+        width: 60%;
+        margin-left: 10%;
+      }
+      ul {
+        li {
+          @include flex-center;
+          justify-content: space-around;
+          margin-bottom: 10px;
+          background: $grey4;
+          padding: 0 10px;
+          border-radius: 15px;
+          margin: 0 auto 10px;
+          .icon {
+            img {
+              width: 40px;
+            }
+          }
+          .cta {
+            @include button-header-selected;
+            border: 2px solid $white;
+            display: flex;
+            font-size: 1.25rem;
+            @include largeScreen {
+              font-size: 1.85rem;
+            }
+            button {
+              padding: 10px 0;
+            }
+          }
+          .total-tokens {
+            text-transform: uppercase;
+            color: $grey2;
+            font-size: 12px;
+            @include mediumScreen {
+              font-size: initial;
+            }
+          }
+        }
+      }
+      &.tips {
+        ul {
+          li {
+            justify-content: flex-start;
+            width: fit-content;
+            border-radius: 35px;
+            padding: 0 4% 0 0 !important;
+            .cta {
+              margin-right: 5px;
+              button {
+                min-width: 90px;
+              }
+            }
+            .total-tokens {
+              font-size: initial;
+              line-height: initial;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#modal-offer-gift-confirmation, #modal-tips-confirmation {
+  padding-top: 30px;
+  .modal-stage {
+    header {
+      .wrapper-title {
+        @include flex-center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        img {
+          width: 40px;
+          height: 40px;
+          padding: 2px;
+          box-shadow: 0 0 5px $grey4;
+          border: 2px solid $green4;
+          border-radius: 6px;
+          margin-right: 20px;
+        }
+        .title-model {
+          h1 {
+            font-size: 2rem;
+            line-height: 3rem;
+            text-decoration: none;
+            color: $green1;
+            margin-bottom: 0;
+            @include mediumScreen {
+              font-size: 4rem;
+              line-height: 4rem;
+            }
+          }
+        }
+      }
+    }
+    .wrapper-content {
+      @include flex-center;
+      align-items: flex-start;
+      justify-content: flex-start;
+      .model-thumbnail {
+        text-align: left;
+        width: 20%;
+        img {
+          max-width: 150px;
+          border-radius: 5px;
+        }
+      }
+      .thankyou-message {
+        text-align: left;
+        width: 100%;
+        @include mediumScreen {
+          padding-left: 30px;
+          width: 80%;
+        }
+        header {
+          h2 {
+            @include font-titles-alternative;
+            font-size: 1.875rem;
+            line-height: 1.875rem;
+            color: $golden1;
+            .data-injection {
+              color: $red3;
+            }
+          }
+        }
+        .icon {
+          margin-bottom: 20px;
+          img {
+            width: 100px;
+          }
+        }
+        .thankyou-content {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          flex-direction: column;
+          @include mediumScreen {
+            flex-direction: row;
+            align-items: center;
+          }
+          .inner-content {
+            h2 {
+              @include font-titles-alternative;
+              font-size: 1.875rem;
+              line-height: 1.875rem;
+              color: $golden1;
+            }
+            h3 {
+              @include font-titles-alternative;
+              font-size: 1.875rem;
+              line-height: 1.875rem;
+              color: $red4;
+            }
+            p {
+              @include font-titles-alternative;
+              color: $red4;
+              font-size: 1rem;
+              line-height: 1rem;
+              .data-injection {
+                color: $white;
+              }
+            }
+          }
+          .cta {
+            button {
+              @include button-header-selected;
+              font-size: 1.85rem;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}

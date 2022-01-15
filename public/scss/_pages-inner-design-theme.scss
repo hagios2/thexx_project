@@ -1,0 +1,1386 @@
+/*
+  PAGES INNER DESIGN THEME
+  Styles all pages using the leather couch background composition
+*/
+#main-area.inner-page-design {
+  background: $grey1;
+  background: url('../images/layout/background-design-theme-smallscreens.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
+  @include mediumScreen {
+    background: url('../images/layout/background-design-theme-mediumscreens.jpg') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+  }
+  @include largeScreen {
+    background: url('../images/layout/background-design-theme-largescreens.jpg') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @include xxxl {
+    background: url('../images/layout/background-design-theme-bigscreens.jpg') no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  #breadcrumb {
+    /*  These rules overwrites the color of white theme pages for the dark theme environment */
+    ul {
+      li {
+        a {
+          color: $grey4;
+          &:hover {
+            color: $green1;
+            svg {
+              path {
+                fill: $green1;
+              }
+            }
+          }
+          svg {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            path {
+              fill: $grey4;
+            }
+          }
+        }
+      }
+    }
+  }
+  #design-theme {
+    margin: 15px 5px;
+    max-width: 1200px;
+    @include mediumScreen {
+      margin: 30px auto 0;
+    }
+    @include xxl {
+      max-width: 1600px;
+    }
+    /*
+      Variations of THEMES
+      These themes uses the same styling for all but with minor changes
+      in layout to accommodate pages as:
+      1- #design-theme without class :: User and Model Register pages
+      2- #design-theme with class="theme-accounts" :: User and Model Account pages
+      3- #design-theme with class="theme-wallet-vip-tokens" ::  Wallet; VIP CLUB and TOKENS pages
+    */
+    &.theme-accounts {
+      header#theme-accounts {
+        margin-bottom: 10px;
+        @include mediumScreen {
+          margin-bottom: 30px;
+        }
+        h1 {
+          color: $golden1;
+          font-size: 1.875rem;
+          line-height: 1.875rem;
+          margin-bottom: 0;
+          @include largeScreen {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+          }
+          .data-injection {
+            color: $white;
+          }
+        }
+        h2 {
+          &.user-membership-level {
+            @include font-titles-alternative;
+            font-size: 1rem;
+            line-height: 1rem;
+            text-shadow: 0 0 2px $black;
+            color: $green1;
+            margin-top: 0;
+            border-left: 4px solid $grey3;
+            border-bottom: 1px solid $grey3;
+            padding: 4px 5px 5px;
+            display: inline-block;
+          }
+          &.win-tokens-sub-heading {
+            margin-top: 10px;
+            @include font-titles-alternative;
+            font-size: 1.85rem;
+            line-height: 1.85rem;
+            color: $white;
+            span {
+              &.highlighted-text {
+                color: $alert2;
+              }
+            }
+          }
+        }
+        #bar-model-account {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+          background: $black;
+          padding: 4px;
+          margin-top: 10px;
+          @include mediumScreen {
+            flex-direction: row;
+            align-items: center;
+            padding: 5px 10px;
+          }
+          #wrapper-ratings {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @include mediumScreen {
+              width: 50%;
+            }
+            > div {
+              @include font-base;
+              font-size: 0.875rem;
+              line-height: 0.875rem;
+              margin-right: 20px;
+              @include largeScreen {
+                margin-right: 15px;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+            #ratings, #favorites-you {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              color: $white;
+              img {
+                margin-right: 5px;
+              }
+            }
+            #ratings {
+              img {
+                margin-top: -4px;
+              }
+            }
+            #favorites-you {
+              span {
+                margin-right: 5px;
+              }
+            }
+            #comments-ratings {
+              a {
+                text-decoration: underline !important;
+                &:hover {
+                  text-decoration: underline !important;
+                  color: $green1;
+                }
+              }
+            }
+          }
+          #model-manage-options {
+            width: 100%;
+            margin-top: 10px;
+            @include mediumScreen {
+              width: 50%;
+              margin-top: initial;
+            }
+            ul {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              li {
+                margin-right: 10px;
+                &:last-child {
+                  margin-right: 0;
+                }
+                @include toggler-triggers;
+                a {
+                  @include button-header-standard;
+                  font-size: 1rem;
+                  padding: 3px 5px 5px;
+                  border-radius: 5px;
+                  @include mediumScreen {
+                    @include button-header-standard;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #scrollto-edit-account-cta {
+        margin-top: -20px;
+        margin-bottom: 20px;
+        a {
+          @include button-header-standard;
+        }
+      }
+      #landing-section {
+        &.model-account-edit {
+          /*
+          This div is only used and (is) necessary at account-model.php
+          It controlls the necessary hidden div to be toggled bu jquery
+          and show the edit forms.
+          */
+          @include transitions;
+          display: none;
+        }
+        &.active {
+          @include transitions;
+          display: flex;
+        }
+      }
+      #wrapper-comments-ratings, #wrapper-photo-gallery {
+        display: none;
+        margin: 40px auto;
+        background: $white;
+        padding: 10px;
+        border-radius: 5px;
+        @include mediumScreen {
+          padding: 20px;
+        }
+        &.active {
+          @include transitions;
+          display: block;
+        }
+        header {
+          h1 {
+            @include font-titles-alternative;
+            color: $black;
+            border-bottom: 1px solid $grey4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            @include mediumScreen {
+              font-size: 1.5rem;
+            }
+          }
+        }
+        /*  Comments */
+        .stage-toggled-comments {
+          header {
+            h1 {
+              @include font-titles-alternative;
+              color: $green1;
+              font-size: 1rem;
+              line-height: 1rem;
+              border: none;
+            }
+          }
+          @include comment-list-entries;
+        }
+        @include model-gallery;
+        #model-gallery {
+          ul {
+            lh {
+              /*  These rules styles the upload photo column in lists of the manage photo gallery */
+              section {
+                padding-right: 10px;
+                header {
+                  h1 {
+                    @include font-titles-alternative;
+                    font-size: 2rem;
+                    line-height: 2.375rem;
+                    color: $grey3;
+                    border: none;
+                  }
+                }
+                .cta {
+                  a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include button-header-standard;
+                    svg {
+                      height: 20px;
+                      margin-right: 3px;
+                      path {
+                        fill: $green1;
+                      }
+                    }
+                    &:hover {
+                      border-color: $green4;
+                      svg {
+                        path {
+                          fill: $black;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            li {
+              position: relative;
+              &:hover {
+                img {
+                  border-color: $red2;
+                }
+              }
+              .edit-options {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                ul {
+                  margin: 0;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-end;
+                  li {
+                    a {
+                      svg {
+                        @include transitions;
+                        opacity: .6;
+                        &:hover {
+                          @include transitions;
+                          opacity: 1;
+                          filter: drop-shadow(2px 4px 6px $grey2);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              img {
+                height: auto;
+                border: 1px solid transparent;
+              }
+            }
+          }
+        }
+      }
+      #wrapper-info-banners {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0;
+        @include mediumScreen {
+          margin-top: 40px;
+        }
+        @include designtheme-bannerbox-info;
+      }
+      #wrapper-wallet-charge {
+
+      }
+    }
+    /* END OF THEME ACCOUNTS */
+
+    &.theme-wallet-vip-tokens {
+      max-width: 98%;
+      #theme-accounts {
+        display: flex;
+        flex-direction: column;
+        @include mediumScreen {
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+        }
+        #number-of-tokens {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 0 5px;
+          margin-top: 10px;
+          @include mediumScreen {
+            justify-content: space-between;
+            padding: initial;
+            margin-top: initial;
+          }
+          svg {
+            margin-right: 10px;
+            height: 40px;
+            path {
+              fill: $golden1;
+            }
+          }
+          #infos {
+            @include font-base;
+            color: $white;
+            font-size: 1rem;
+            line-height: 1rem;
+            border-radius: 5px;
+            background: $black;
+            border: 1px solid $golden1;
+            padding: 6px 15px 4px 20px;
+            box-shadow: 0 0 10px $golden1;
+            span {
+              color: $red3;
+            }
+          }
+        }
+      }
+      #wrapper-win-tokens {
+        margin: 40px auto;
+        @include mediumScreen {
+          margin: 100px auto;
+        }
+        #win-tokens {
+          .wrapper-section {
+            padding: 0;
+            @include mediumScreen {
+              padding: 0 20px;
+            }
+            section {
+              padding: 15px;
+              text-align: center;
+              margin-bottom: 30px;
+              @include mediumScreen {
+                padding: 25px;
+                margin-bottom: initial;
+              }
+              &.weekly-lottery {
+                background: linear-gradient(180deg, #8F0606 0%, rgba(255, 128, 121, 0) 100%);
+                border-radius: 15px;
+                .middle-stage {
+                  display: flex;
+                  justify-content: space-evenly;
+                  align-items: center;
+                  #countdown {
+                    border: 2px solid $red3;
+                    background: $white;
+                    @include font-titles;
+                    font-size: 1.875rem;
+                    line-height: 1.875rem;
+                    color: $red3;
+                    padding: 5px;
+                    margin-right: 11px;
+                    @include mediumScreen {
+                      padding: 5px 15px;
+                      margin-right: initial;
+                    }
+                  }
+                  svg {
+                    path {
+                      fill: $white;
+                    }
+                  }
+                  .cta {
+                    a {
+                      @include button-header-selected;
+                      font-size: 2rem;
+                      line-height: 2rem;
+                      padding: 8px 27px 12px;
+                      margin-left: 5px;
+                      @include mediumScreen {
+                        margin-left: initial;
+                      }
+                      &:hover {
+                        border-color: $alert3;
+                      }
+                      &.shaker {
+                        @include shaker;
+                        &:hover {
+                          @include shaker;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &.unlock-the-slot {
+                background: linear-gradient(180deg, #00267F 0%, rgba(37, 41, 48, 0.51) 100%);
+                border-radius: 15px;
+                .unlock-content {
+                  .left-section {
+                    text-align: left;
+                    h2 {
+                      @include font-titles-alternative;
+                      font-size: 2.188rem;
+                      line-height: 2.188rem;
+                      color: $linearSet1;
+                      @include mediumScreen {
+                        padding-top: 50px;
+                      }
+                    }
+                    p {
+                      @include font-titles-alternative;
+                      color: $alert3;
+                      font-size: 1.563rem;
+                      line-height: 1.563rem;
+                      margin-bottom: 0;
+                    }
+                  }
+                  .right-section {
+                    .arrow-down {
+                      text-align: left;
+                      padding-left: 10px;
+                      svg {
+                        path {
+
+                        }
+                      }
+                    }
+                    .cta {
+                      a {
+                        @include button-header-selected;
+                        font-size: 2rem;
+                        line-height: 2rem;
+                        padding: 8px 27px 12px;
+                        &:hover {
+                          border-color: $alert3;
+                        }
+                        &.shaker {
+                          @include shaker;
+                          animation: shake 2s cubic-bezier(.36,.07,.19,.97) both;
+                          &:hover {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              header {
+                h1 {
+                  @include font-titles-alternative;
+                  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                  color: $white;
+                  font-size: 3rem;
+                  line-height: 3rem;
+                  margin-bottom: 30px;
+                  @include mediumScreen {
+                    font-size: 4rem;
+                  }
+                }
+                h2 {
+                  @include font-titles-alternative;
+                  font-size: 1.875rem;
+                  line-height: 1.875rem;
+                  color: $alert3;
+                  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.95);
+                  margin-bottom: 30px;
+                }
+              }
+              .footer-notice {
+                margin-top: 40px;
+                p {
+                  @include font-titles-alternative;
+                  font-style: italic;
+                  font-weight: normal;
+                  font-size: 1.25rem;
+                  line-height: 1.25rem;
+                  color: $alert3;
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+        #weekly-lottery {
+          background: $grey1;
+          padding: 20px;
+          color: $white;
+        }
+      }
+      #landing-section {
+        #table-content-right {
+          padding: 0;
+          width: 100%;
+          #wrapper-edit-options-sections {
+            .wrapper-banners {
+              align-items: flex-start;
+              .bannerbox-tokens.my-tokens {
+                @include transitions;
+                margin-bottom: 40px;
+                @include mediumScreen {
+                  padding: 40px 20px;
+                  margin: 0 10px;
+                }
+                &:hover {
+                  @include transitions;
+                  background: linear-gradient(180deg, #05BE70 0%, rgba(255, 128, 121, 0) 100%);
+                  header {
+                    h2 {
+                      @include transitions;
+                      color: yellow;
+                      text-shadow: 0 0 10px $black;
+                    }
+                    h3 {
+                      color: $white;
+                    }
+                  }
+                  .cta {
+                    a {
+                      border-color: $white;
+                    }
+                  }
+                }
+                header {
+                  h1, h2, h3 {
+                    @include font-titles-alternative;
+                  }
+                  h1 {
+                    font-size: 2.25rem;
+                    line-height: 2.25rem;
+                    color: $white;
+                    margin-bottom: 20px;
+                    @include mediumScreen {
+                      font-size: 3rem;
+                    }
+                  }
+                  h2 {
+                    font-size: 1.875rem;
+                    line-height: 1.25rem;
+                    color: $black;
+                    height: 40px;
+                  }
+                  h3 {
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    color: $black;
+                  }
+                }
+                .tokens-euros {
+                  @include font-titles-alternative;
+                  margin-top: 20px;
+                  font-size: 20px;
+                  line-height: 20px;
+                  color: $green3;
+                }
+              }
+              .bannerbox-tokens.my-tokens.charge-payment-bannerbox {
+                background: linear-gradient(180deg, #05BE70 0%, rgba(255, 128, 121, 0) 100%);
+                width: 100%;
+                @include mediumScreen {
+                  width: 25%;
+                }
+                header {
+                  h1, h2 {
+                    text-shadow: 0 0 10px $black;
+                  }
+                  h2, h3 {
+                    color: $golden4;
+                  }
+                  h3 {
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+              .bannerbox-tokens.my-tokens.dark-theme {
+                background: linear-gradient(180deg, #922323 0%, rgba(255, 128, 121, 0) 100%);
+                width: 100%;
+                @include mediumScreen {
+                  width: 25%;
+                }
+                header {
+                  h1 {
+                    margin-top: 20px;
+                    font-size: 2.188rem;
+                    line-height: 2.2rem;
+                  }
+                  h1, h2, h3 {
+                    text-shadow: 0 0 10px $black;
+                  }
+                  h2 {
+                    color: $golden4;
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
+                  }
+                  h3 {
+                    color: $red3;
+                    font-size: 1.85rem;
+                    line-height: 1.85rem;
+                    @include mediumScreen {
+                      font-size: 2.188rem;
+                      line-height: 2.188rem;
+                    }
+                  }
+                }
+              }
+              #wrapper-charge-wallet-payment-methods {
+                width: 100%;
+                @include mediumScreen {
+                  width: 50%;
+                  padding: 0 40px;
+                }
+                header {
+                  h1 {
+                    @include font-titles;
+                    font-size: 1.875rem;
+                    line-height: 1.875rem;
+                    color: $white;
+                  }
+                  h2 {
+                    @include font-titles-alternative;
+                    color: $green1;
+                    font-size: 1.25rem;
+                    line-height: 1.5rem;
+                  }
+                }
+                #add-credit-card {
+                  margin-bottom: 40px;
+                  @include mediumScreen {
+                    margin-bottom: initial;
+                  }
+                  button {
+                    @include button-header-standard;
+                    padding: 15px 30px;
+                    margin: 30px 0 0;
+                    svg {
+                      margin-left: 5px;
+                      path {
+                        fill: $green1;
+                      }
+                    }
+                  }
+                  #credit-card-selection {
+                    display: none;
+                    @include theclub-forms;
+                    margin-top: 10px;
+                    margin-bottom: 40px;
+                    background: $white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    &.active {
+                      display: block;
+                    }
+                  }
+                  #wrapper-form {
+                    margin-top: 30px;
+                    @include theclub-forms;
+                    #form-stage {
+                      label {
+                        color: $grey4;
+                      }
+                    }
+                    #disclaimer {
+                      p {
+                        color: $grey4;
+                      }
+                    }
+                    @include terms-conditions;
+                    #wrapper-terms-conditions {
+                      margin: 30px 0;
+                      justify-content: flex-start;
+                    }
+                    .cta {
+                      @include button-header-selected;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /*  Inner pages landing section */
+    #landing-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include mediumScreen {
+        @include flex-center;
+        align-items: flex-start;
+        flex-direction: row;
+      }
+
+      #inner-edit {
+        /*  This additional class is meant to fix the auto display block
+         when it's needed to be FLEX. This wrapper div cuts framework forcing
+         and keeps display flex as wanted.
+        */
+        @include flex-center;
+        align-items: flex-start;
+        flex-direction: column;
+        @include mediumScreen {
+          flex-direction: row;
+        }
+      }
+      .table-content-medium-right {
+        @include mediumScreen {
+          padding-left: 20px;
+        }
+      }
+      #table-content-left,
+      .table-content-medium-right
+        /*  Middle column in the Model Account Page */
+        {
+        width: 100%;
+        @include mediumScreen {
+          width: 35%;
+        }
+        header {
+          h1 {
+            color: $golden1;
+            font-size: 1.875rem;
+            line-height: 1.875rem;
+            @include largeScreen {
+              font-size: 3.125rem;
+              line-height: 3.438rem;
+            }
+            .data-injection {
+              color: $white;
+            }
+          }
+          h2 {
+            margin: 10px 0 30px;
+            @include font-titles-alternative;
+            color: $golden1;
+            font-size: 1.25rem;
+            line-height: 1rem;
+            @include mediumScreen {
+              font-size: 2.813rem;
+              line-height: 3.063rem;
+              margin: 20px 0 30px;
+            }
+            &.small-headline {
+              font-size: 1.813rem;
+              line-height: 1.813rem;
+              text-shadow: 1px 1px 2px $black;
+            }
+          }
+          h3 {
+            margin: 10px 0 30px;
+            @include font-titles-alternative;
+            color: $green1;
+            font-size: 1.165rem;
+            line-height: 1.165rem;
+            @include shaker-attention;
+          }
+        }
+        .register-edit-club-member {
+          @include theclub-forms;
+          margin-bottom: 20px;
+          @include mediumScreen {
+            margin-bottom: 0;
+          }
+          header {
+            @include flex-center;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+            margin-top: 0;
+            @include mediumScreen {
+              margin-top: initial;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+              path {
+                fill: $grey4;
+              }
+            }
+            h1 {
+              @include font-titles-alternative;
+              font-size: 0.875rem;
+              line-height: 0.875rem;
+              color: $grey4;
+              margin-bottom: 0;
+              text-shadow: 0 0 2px $black;
+            }
+          }
+          #footer-options {
+            ul {
+              li {
+                a {
+                  span {
+                    &.previous {
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+          @include terms-conditions;
+          #wrapper-terms-conditions {
+            justify-content: flex-start;
+            p {
+              margin-bottom: 0;
+            }
+          }
+          /*  After registration  */
+          #thank-you-message {
+            margin-top: 20px;
+            h2 {
+              @include font-titles-alternative;
+              font-size: 1.125rem;
+              line-height: 1.125rem;
+              color: $white;
+              margin-bottom: 20px;
+            }
+            .content {
+              p, li {
+                @include font-base;
+                font-size: 1rem;
+                line-height: 1rem;
+                color: $white;
+              }
+            }
+            ul {
+              li {
+                button {
+                  @include button-header-selected;
+                }
+              }
+            }
+          }
+        }
+        ul {
+          li {
+            a {
+              @include button-header-selected;
+              &.big-button {
+                padding: 8px 27px 13px;
+                font-size: 2.25rem;
+                line-height: 2.25rem;
+              }
+            }
+          }
+        }
+      }
+      #table-content-left {
+        width: 100%;
+        order: 1;
+        @include mediumScreen {
+          order: 1;
+          width: 35%;
+        }
+        header {
+          margin: 20px 5px 0;
+          @include mediumScreen {
+            margin-top: 20px;
+          }
+          h1 {
+            line-height: 1.875rem;
+            @include mediumScreen {
+              line-height: 3.125rem;
+            }
+          }
+        }
+        ul {
+          li {
+            text-align: left;
+          }
+        }
+      }
+      .table-content-medium-right {
+        width: 100%;
+        order: 2;
+        @include mediumScreen {
+          order: 2;
+          width: 35%;
+        }
+      }
+      #table-content-right {
+        width: 100%;
+        order: 1;
+        @include mediumScreen {
+          width: 65%;
+          padding-left: 5%;
+          order: 2;
+        }
+        @include xxxl {
+          text-align: center;
+        }
+        #composition-section {
+          img {
+            filter: drop-shadow(1.91362px 3.82724px 9.56811px rgba(0, 0, 0, 0.5));
+            border-radius: 5px;
+          }
+        }
+        #stage-video-teaser {
+          background: rgba(0,0,0,.8);
+          padding: 10px;
+          border: 20px groove $golden1;
+          min-height: 200px;
+          @include mediumScreen {
+            min-height: 400px;
+          }
+        }
+        /*  Wrapper of section for EDIT and Options for the site Members and Models */
+        #wrapper-edit-options-sections {
+          .wrapper-banners {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            @include mediumScreen {
+              flex-direction: row;
+              @include flex-center;
+            }
+            @include designtheme-bannerbox-pitch;
+            @include designtheme-bannerbox-tokens;
+            .bannerbox-tokens.my-tokens {
+              margin-bottom: 30px;
+              @include mediumScreen {
+                margin-bottom: initial;
+              }
+            }
+          }
+        }
+      }
+      /*  Center title theme pages */
+      #center-title-theme {
+        margin: 0 auto;
+        header {
+          text-align: center;
+          h1 {
+            color: $golden1;
+            font-size: 1.875rem;
+            line-height: 1rem;
+            @include largeScreen {
+              font-size: 3.125rem;
+              line-height: 3.438rem;
+            }
+          }
+        }
+      }
+      &.model-account-page {
+        #table-content-left {
+          width: 100%;
+          order: 1;
+          margin-bottom: 40px;
+          @include mediumScreen {
+            order: 1;
+            width: 35%;
+            margin-bottom: initial;
+          }
+          header {
+            margin-top: 0;
+            max-width: 300px;
+            @include mediumScreen {
+              max-width: initial;
+              margin-top: initial
+            }
+            h1 {
+              font-size: 2.75rem;
+              line-height: 2.75rem;
+            }
+          }
+          .register-edit-club-member {
+            margin: 0 5px 20px;
+            @include mediumScreen {
+              margin: initial;
+            }
+          }
+        }
+        #table-content-right {
+          width: 100%;
+          order: 2;
+          @include mediumScreen {
+            width: 65%;
+            padding-left: 5%;
+            order: 2;
+          }
+        }
+      }
+    }
+    #wrapper-manage-wallet {
+      @include theclub-forms;
+      #tokens-info {
+        padding: 0;
+        margin-bottom: 20px;
+        @include designtheme-bannerbox-info;
+        @include mediumScreen {
+          padding: initial;
+          margin-bottom: initial;
+        }
+        .bannerbox-info {
+          padding: 0;
+        }
+        .withdraw-options {
+          margin-top: 20px;
+          ul {
+            li {
+              &#cta-options {
+                ul {
+                  margin: 0;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  li {
+                    button, a {
+                      @include button-club-pill;
+                      padding: 10px;
+                      border-color: $grey4;
+                      color: $grey4;
+                      &:hover {
+                        border-color: $green1;
+                      }
+                    }
+                    &.cta-highlight {
+                      button, a {
+                        color: $white;
+                        background: $green1;
+                        border-color: $green1;
+                        &:hover {
+                          background: $green4;
+                          border-color: $green4;
+                          color: $black;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #wallet-data {
+        #inner-waller-data, #withdrawing-confirmation {
+          background: $grey1;
+          padding: 10px;
+          border-radius: 5px;
+          @include mediumScreen {
+            margin-left: 20px;
+          }
+          #wrapper-calendar-interval {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 400px;
+            label {
+              position: absolute;
+              text-indent: -9999px;
+            }
+            input {
+              &:first-child {
+                margin-right: 5px;
+              }
+            }
+            input[type="date"] {
+              width: 49%;
+              @include mediumScreen {
+                width: initial;
+              }
+            }
+          }
+          #wallet-content-list {
+            margin-top: 15px;
+            #left-column, #right-column {
+              .wrapper-wallet-listings {
+                margin-bottom: 30px;
+                margin-right: 20px;
+                @include largeScreen {
+                  margin-bottom: initial;
+                }
+                header {
+                  margin-bottom: 20px;
+                  h1 {
+                    @include font-titles-alternative;
+                    color: $white;
+                    font-size: 1.438rem;
+                    line-height: 1.438rem;
+                    @include mediumScreen {
+                      font-size: 1.25rem;
+                      line-height: 1.25rem;
+                    }
+                  }
+                }
+                ul {
+                  &.history-listings {
+                    li {
+                      @include transitions;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 10px;
+                      padding-bottom: 10px;
+                      border-bottom: 1px solid #333333;
+                      &:hover {
+                        @include transitions;
+                        border-color: $grey4;
+                      }
+                      div {
+                        &.history-title, &.history-date, &.earnings-title {
+                          width: 70%;
+                          @include font-base;
+                          font-size: 1rem;
+                          line-height: 1.25rem;
+                          color: $grey4;
+                        }
+                        &.history-date {
+                          width: 30%;
+                          color: $grey2;
+                          text-align: left;
+                        }
+                        &.earnings-title {
+                          color: $grey4;
+                          .green-title {
+                            color: $green1;
+                            .data-injection {
+
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            #right-column {
+              .wrapper-wallet-listings {
+                header {
+                  h1 {
+                    color: $green1;
+                  }
+                }
+              }
+            }
+          }
+        }
+        #withdrawing-confirmation {
+          #confirmation-form {
+            @include footer-options;
+            @include terms-conditions;
+            justify-content: flex-start;
+            #wrapper-terms-conditions {
+              text-align: left;
+              justify-content: flex-start;
+            }
+          }
+          #confirmation-message {
+            margin-top: 30px;
+            @include mediumScreen {
+              padding-left: 40px;
+              margin-top: initial;
+            }
+            header {
+              margin-bottom: 20px;
+              h1 {
+                @include font-titles-alternative;
+                color: $red3;
+                font-size: 1.25rem;
+                line-height: 1.5rem;
+              }
+            }
+            p {
+              font-size: 1rem;
+              line-height: 1.25rem;
+              color: $grey4;
+            }
+          }
+        }
+      }
+    }
+    /*  Secondary section Inner pages design theme */
+    #secondary-section {
+      margin: 20px 10px;
+      @include mediumScreen {
+        margin: 40px 10px;
+      }
+      #wrapper-designtheme-boxes {
+        margin-top: 40px;
+        @include mediumScreen {
+          margin-top: 70px;
+        }
+        @include designtheme-boxes;
+      }
+      #wrapper-create-account-steps {
+        ul#steps-tabs {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          @include mediumScreen {
+            margin-right: 40px;
+          }
+          li {
+            display: flex;
+            align-content: center;
+            @include paragraph-hero;
+            font-size: 1rem;
+            line-height: 1rem;
+            color: $white;
+            @include mediumScreen {
+              margin-right: 40px;
+              font-size: 1.375rem; // 22px
+              line-height: 1.563rem;
+            }
+            &.active {
+              color: $green1;
+            }
+            &:first-child {
+              &::before {
+                background-image: none;
+                display: none;
+              }
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+            &::before {
+              display: inline-block;
+              content: ' ';
+              background-image: url('../images/icons/arrow-right-green.svg');
+              background-size: 18px 18px;
+              height: 18px;
+              width: 18px;
+              margin-right: 20px;
+              @include mediumScreen {
+                background-size: 28px 28px;
+                height: 28px;
+                width: 28px;
+                margin-right: 40px;
+              }
+            }
+          }
+        }
+        /*
+          Content of Design THEME pages
+        */
+        #wrapper-content-inner-pages{
+          margin-top: 40px;
+          @include theclub-forms;
+          &.small-center-division {
+            max-width: 500px;
+            margin: 40px auto 0;
+            #steps-panel {
+              @include footer-options;
+              @include terms-conditions;
+              .two-columns {
+                @include flex-center;
+                align-items: flex-start;
+                /*  These styles the two column select dropdowns  */
+                select {
+                  width: 49%;
+                }
+                #wrapper-terms-conditions {
+                  margin-top: 5px;
+                  margin-left: 10px;
+                  justify-content: flex-start;
+                }
+                input[type='checkbox'] {
+                  width: 30px;
+                  @include mediumScreen {
+                    width: 21px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #wrapper-success-message {
+        @include modals-and-confirmation-pages;
+        padding: 20px;
+        @include mediumScreen {
+          padding: 50px;
+        }
+        .content {
+          p {
+            @include font-base;
+            font-size: 1rem;
+            line-height: 1rem;
+            color: $white;
+            margin-bottom: 10px;
+          }
+        }
+        @include footer-options;
+        #footer-options {
+          ul {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+#wrapper-additional-page-data {
+  max-width: 1200px;
+  margin: 0 auto;
+  @include xxl {
+    max-width: 1600px;
+  }
+  @include favorites-swiper-list;
+}

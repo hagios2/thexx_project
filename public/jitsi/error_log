@@ -1,0 +1,27 @@
+[20-Feb-2021 01:49:58 America/New_York] PHP Parse error:  syntax error, unexpected '{', expecting ']' in /home/gurjepin/public_html/jitsi/test.php on line 4
+[20-Feb-2021 01:50:48 America/New_York] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Warning:  Use of undefined constant window - assumed 'window' (this will throw an Error in a future version of PHP) in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Warning:  Use of undefined constant location - assumed 'location' (this will throw an Error in a future version of PHP) in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Warning:  Use of undefined constant origin - assumed 'origin' (this will throw an Error in a future version of PHP) in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Warning:  A non-numeric value encountered in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Warning:  A non-numeric value encountered in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:50:48 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Date' not found in /home/gurjepin/public_html/jitsi/test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 01:52:36 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Date' not found in /home/gurjepin/public_html/jitsi/test.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/gurjepin/public_html/jitsi/test.php on line 3
+[20-Feb-2021 02:15:36 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=748539' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:15:38 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=897457' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:15:57 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=776054' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:16:57 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=192119' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:16:58 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=382846' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:17:07 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=728923' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:17:08 America/New_York] PHP Notice:  Trying to get property '/jitsi/meeting.html?mid=435460' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:18:45 America/New_York] PHP Notice:  Trying to get property '%2Fjitsi%2Fmeeting.html%3Fmid%3D485076' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 02:18:56 America/New_York] PHP Notice:  Trying to get property '%2Fjitsi%2Fmeeting.html%3Fmid%3D916015' of non-object in /home/gurjepin/public_html/jitsi/index.php on line 5
+[20-Feb-2021 08:25:18 America/New_York] PHP Notice:  Array to string conversion in /home/gurjepin/public_html/jitsi/index.php on line 9
+[20-Feb-2021 08:26:41 America/New_York] PHP Notice:  Array to string conversion in /home/gurjepin/public_html/jitsi/index.php on line 9
+[20-Feb-2021 08:58:40 America/New_York] PHP Notice:  Array to string conversion in /home/gurjepin/public_html/jitsi/index.php on line 9

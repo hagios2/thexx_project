@@ -1,0 +1,55 @@
+#main-area {
+  &.inner-page-design {
+    main#design-theme {
+      &.theme-accounts {
+        header {
+          &#theme-accounts {
+            h2.user-membership-level {
+              border: none !important;
+            }
+          }
+        }
+        #landing-section {
+          #table-content-right {
+            #wrapper-edit-options-sections {
+              .wrapper-banners {
+                align-items: stretch;
+
+                > section {
+                  justify-content: space-between;
+                  max-height: 340px !important;
+
+                  @include xlargeScreen {
+                    max-height: 250px !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        #wrapper-manage-wallet {
+          #wallet-data {
+            #inner-waller-data {
+              #wrapper-calendar-interval {
+                form {
+                  @include largeScreen {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    input {
+                      margin-bottom: 1.5rem;
+                      &[type=date] {
+                        margin-right: 1rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

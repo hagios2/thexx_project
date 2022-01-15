@@ -1,0 +1,208 @@
+/*
+  Panel Filters Styling
+*/
+#panel-filters {
+  display: none;
+  background: $white;
+  border: 1px solid $white;
+  margin-bottom: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  &.active {
+    display: inline-block;
+  }
+  #wrapper-selection-sections {
+    @include largeScreen {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+    &.videoshop-filters {
+      section {
+        width: 100%;
+        padding: 8px;
+        &.videoshop-range-slider {
+          width: 100%;
+          @include mediumScreen {
+            width: 70%;
+          }
+          header {
+            padding: 0 !important;
+          }
+        }
+        &.languages-selector {
+          width: 100%;
+          @include mediumScreen {
+            width: 30%;
+          }
+        }
+      }
+    }
+    section {
+      width: 100%;
+      padding: 8px;
+      @include mediumScreen {
+        width: 50%;
+      }
+      header {
+        margin-bottom: 10px;
+        padding: 0;
+        h1 {
+          @include font-titles-alternative;
+          font-size: 0.75rem;
+          line-height: 0.75rem;
+          color: $grey2;
+          margin: 0;
+        }
+      }
+      .filter-options {
+        &.wrapper-range-slider-video {
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          flex-direction: column;
+          @include mediumScreen {
+            flex-direction: row;
+          }
+          .range-slider-video {
+            @include range-slider;
+            width: 100%;
+            margin-bottom: 20px;
+            @include mediumScreen {
+              width: 75%;
+              margin-right: 2%;
+              margin-bottom: initial;
+            }
+            .column-left, .column-right {
+              padding: 0 15px 10px 10px;
+              @include range-slider;
+              @include mediumScreen {
+                padding: 0;
+              }
+              h2 {
+                @include font-titles-alternative;
+                color: $green1;
+                font-size: 0.875rem;
+                line-height: 0.875rem;
+                margin-bottom: 20px;
+                margin-left: -10px;
+                @include mediumScreen {
+                  margin-left: initial;
+                }
+              }
+            }
+            .column-left {
+              @include mediumScreen {
+                padding-right: 20px;
+              }
+            }
+            .column-right {
+              @include mediumScreen {
+                padding-left: 20px;
+              }
+            }
+          }
+          ul {
+            width: 100%;
+            @include mediumScreen {
+              width: 20%;
+            }
+          }
+        }
+        ul {
+          @include largeScreen {
+            display: flex;
+            justify-content: flex-start;
+            align-content: center;
+          }
+          li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            @include largeScreen {
+              margin-bottom: initial;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+            button {
+              @include button-header-unselected;
+              border-radius: 5px;
+              border-color: $grey4;
+              color: $grey3;
+              font-size: 0.813rem;
+              line-height: 0.813rem;
+              padding: 8px 17px 9px;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*  Footer bar options  */
+  .footer-panel-filters {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .left-column-options, .right-column-options {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        li {
+          button {
+            @include font-titles-alternative;
+            font-size: 0.75rem;
+            line-height: 0.75rem;
+            color: $grey2;
+            padding: 2px 5px 4px;
+            &:hover {
+              color: $green1;
+            }
+          }
+        }
+      }
+    }
+    .left-column-options {
+      ul {
+        li {
+          margin-right: 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+          button {
+            color: $brandredMain;
+            &:hover {
+              color: $red3;
+            }
+          }
+        }
+      }
+    }
+    .right-column-options {
+      ul {
+        li {
+          margin-left: 20px;
+          &:last-child {
+            button {
+              font-size: 0.938rem;
+              line-height: 0.938rem;
+              color: white;
+              background: $green1;
+              border-radius: 4px;
+              &:hover {
+                background: $green4;
+                color: $black;
+              }
+            }
+          }
+          button {
+            color: $grey1;
+            line-height: 0.938rem;
+          }
+        }
+      }
+    }
+  }
+}
